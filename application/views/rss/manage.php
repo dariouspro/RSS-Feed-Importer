@@ -78,9 +78,7 @@
                                         <button class="btn btn-sm btn-light border dropdown-toggle" type="button" data-bs-toggle="dropdown">
                                             <i class="bi bi-three-dots"></i>
                                         </button>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#"><i class="bi bi-pencil me-2"></i> Edit</a></li>
-                                            <li><hr class="dropdown-divider"></li>
+                                        <ul class="dropdown-menu"> 
                                             <li><a class="dropdown-item text-danger" href="<?= base_url('rss/delete/' . $post['id']) ?>" 
                                                    onclick="return confirm('Are you sure you want to delete this post?')">
                                                    <i class="bi bi-trash me-2"></i> Delete
