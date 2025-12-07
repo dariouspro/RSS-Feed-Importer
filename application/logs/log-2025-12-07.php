@@ -12789,3 +12789,890 @@ INFO - 2025-12-07 11:38:16 --> File loaded: /var/www/ci.lnkn.in/application/view
 INFO - 2025-12-07 11:38:16 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/footer.php
 INFO - 2025-12-07 11:38:16 --> Final output sent to browser
 DEBUG - 2025-12-07 11:38:16 --> Total execution time: 0.0157
+INFO - 2025-12-07 11:38:54 --> Config Class Initialized
+INFO - 2025-12-07 11:38:54 --> Hooks Class Initialized
+DEBUG - 2025-12-07 11:38:54 --> UTF-8 Support Enabled
+INFO - 2025-12-07 11:38:54 --> Utf8 Class Initialized
+INFO - 2025-12-07 11:38:54 --> URI Class Initialized
+INFO - 2025-12-07 11:38:54 --> Router Class Initialized
+INFO - 2025-12-07 11:38:54 --> Output Class Initialized
+INFO - 2025-12-07 11:38:54 --> Security Class Initialized
+DEBUG - 2025-12-07 11:38:54 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-12-07 11:38:54 --> Input Class Initialized
+INFO - 2025-12-07 11:38:54 --> Language Class Initialized
+INFO - 2025-12-07 11:38:54 --> Loader Class Initialized
+INFO - 2025-12-07 11:38:54 --> Helper loaded: url_helper
+INFO - 2025-12-07 11:38:54 --> Database Driver Class Initialized
+INFO - 2025-12-07 11:38:54 --> Session: Class initialized using 'files' driver.
+INFO - 2025-12-07 11:38:54 --> Controller Class Initialized
+INFO - 2025-12-07 11:38:54 --> Model "Post_model" initialized
+INFO - 2025-12-07 11:38:54 --> Helper loaded: form_helper
+INFO - 2025-12-07 11:38:54 --> Form Validation Class Initialized
+INFO - 2025-12-07 11:38:54 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/header.php
+INFO - 2025-12-07 11:38:54 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/import.php
+INFO - 2025-12-07 11:38:54 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/footer.php
+INFO - 2025-12-07 11:38:54 --> Final output sent to browser
+DEBUG - 2025-12-07 11:38:54 --> Total execution time: 0.0071
+INFO - 2025-12-07 11:38:55 --> Config Class Initialized
+INFO - 2025-12-07 11:38:55 --> Hooks Class Initialized
+DEBUG - 2025-12-07 11:38:55 --> UTF-8 Support Enabled
+INFO - 2025-12-07 11:38:55 --> Utf8 Class Initialized
+INFO - 2025-12-07 11:38:55 --> URI Class Initialized
+INFO - 2025-12-07 11:38:55 --> Router Class Initialized
+INFO - 2025-12-07 11:38:55 --> Output Class Initialized
+INFO - 2025-12-07 11:38:55 --> Security Class Initialized
+DEBUG - 2025-12-07 11:38:55 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-12-07 11:38:55 --> Input Class Initialized
+INFO - 2025-12-07 11:38:55 --> Language Class Initialized
+INFO - 2025-12-07 11:38:55 --> Loader Class Initialized
+INFO - 2025-12-07 11:38:55 --> Helper loaded: url_helper
+INFO - 2025-12-07 11:38:55 --> Database Driver Class Initialized
+INFO - 2025-12-07 11:38:55 --> Session: Class initialized using 'files' driver.
+INFO - 2025-12-07 11:38:55 --> Controller Class Initialized
+INFO - 2025-12-07 11:38:55 --> Model "Post_model" initialized
+INFO - 2025-12-07 11:38:55 --> Helper loaded: form_helper
+INFO - 2025-12-07 11:38:55 --> Form Validation Class Initialized
+INFO - 2025-12-07 11:38:55 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/header.php
+INFO - 2025-12-07 11:38:55 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/import.php
+INFO - 2025-12-07 11:38:55 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/footer.php
+INFO - 2025-12-07 11:38:55 --> Final output sent to browser
+DEBUG - 2025-12-07 11:38:55 --> Total execution time: 0.0066
+INFO - 2025-12-07 11:38:56 --> Config Class Initialized
+INFO - 2025-12-07 11:38:56 --> Hooks Class Initialized
+DEBUG - 2025-12-07 11:38:56 --> UTF-8 Support Enabled
+INFO - 2025-12-07 11:38:56 --> Utf8 Class Initialized
+INFO - 2025-12-07 11:38:56 --> URI Class Initialized
+INFO - 2025-12-07 11:38:56 --> Router Class Initialized
+INFO - 2025-12-07 11:38:56 --> Output Class Initialized
+INFO - 2025-12-07 11:38:56 --> Security Class Initialized
+DEBUG - 2025-12-07 11:38:56 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-12-07 11:38:56 --> Input Class Initialized
+INFO - 2025-12-07 11:38:56 --> Language Class Initialized
+INFO - 2025-12-07 11:38:56 --> Loader Class Initialized
+INFO - 2025-12-07 11:38:56 --> Helper loaded: url_helper
+INFO - 2025-12-07 11:38:56 --> Database Driver Class Initialized
+INFO - 2025-12-07 11:38:56 --> Session: Class initialized using 'files' driver.
+INFO - 2025-12-07 11:38:56 --> Controller Class Initialized
+INFO - 2025-12-07 11:38:56 --> Model "Post_model" initialized
+INFO - 2025-12-07 11:38:56 --> Helper loaded: form_helper
+INFO - 2025-12-07 11:38:56 --> Form Validation Class Initialized
+INFO - 2025-12-07 11:38:56 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/header.php
+INFO - 2025-12-07 11:38:56 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/manage.php
+INFO - 2025-12-07 11:38:56 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/footer.php
+INFO - 2025-12-07 11:38:56 --> Final output sent to browser
+DEBUG - 2025-12-07 11:38:56 --> Total execution time: 0.0075
+INFO - 2025-12-07 11:38:59 --> Config Class Initialized
+INFO - 2025-12-07 11:38:59 --> Hooks Class Initialized
+DEBUG - 2025-12-07 11:38:59 --> UTF-8 Support Enabled
+INFO - 2025-12-07 11:38:59 --> Utf8 Class Initialized
+INFO - 2025-12-07 11:38:59 --> URI Class Initialized
+INFO - 2025-12-07 11:38:59 --> Router Class Initialized
+INFO - 2025-12-07 11:38:59 --> Output Class Initialized
+INFO - 2025-12-07 11:38:59 --> Security Class Initialized
+DEBUG - 2025-12-07 11:38:59 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-12-07 11:38:59 --> Input Class Initialized
+INFO - 2025-12-07 11:38:59 --> Language Class Initialized
+ERROR - 2025-12-07 11:38:59 --> 404 Page Not Found: Rss/index
+INFO - 2025-12-07 11:39:03 --> Config Class Initialized
+INFO - 2025-12-07 11:39:03 --> Hooks Class Initialized
+DEBUG - 2025-12-07 11:39:03 --> UTF-8 Support Enabled
+INFO - 2025-12-07 11:39:03 --> Utf8 Class Initialized
+INFO - 2025-12-07 11:39:03 --> URI Class Initialized
+INFO - 2025-12-07 11:39:03 --> Router Class Initialized
+INFO - 2025-12-07 11:39:03 --> Output Class Initialized
+INFO - 2025-12-07 11:39:03 --> Security Class Initialized
+DEBUG - 2025-12-07 11:39:03 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-12-07 11:39:03 --> Input Class Initialized
+INFO - 2025-12-07 11:39:03 --> Language Class Initialized
+INFO - 2025-12-07 11:39:03 --> Loader Class Initialized
+INFO - 2025-12-07 11:39:03 --> Helper loaded: url_helper
+INFO - 2025-12-07 11:39:03 --> Database Driver Class Initialized
+INFO - 2025-12-07 11:39:03 --> Session: Class initialized using 'files' driver.
+INFO - 2025-12-07 11:39:03 --> Controller Class Initialized
+INFO - 2025-12-07 11:39:03 --> Model "Post_model" initialized
+INFO - 2025-12-07 11:39:03 --> Helper loaded: form_helper
+INFO - 2025-12-07 11:39:03 --> Form Validation Class Initialized
+INFO - 2025-12-07 11:39:03 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/header.php
+INFO - 2025-12-07 11:39:03 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/import.php
+INFO - 2025-12-07 11:39:03 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/footer.php
+INFO - 2025-12-07 11:39:03 --> Final output sent to browser
+DEBUG - 2025-12-07 11:39:03 --> Total execution time: 0.0069
+INFO - 2025-12-07 11:39:04 --> Config Class Initialized
+INFO - 2025-12-07 11:39:04 --> Hooks Class Initialized
+DEBUG - 2025-12-07 11:39:04 --> UTF-8 Support Enabled
+INFO - 2025-12-07 11:39:04 --> Utf8 Class Initialized
+INFO - 2025-12-07 11:39:04 --> URI Class Initialized
+INFO - 2025-12-07 11:39:04 --> Router Class Initialized
+INFO - 2025-12-07 11:39:04 --> Output Class Initialized
+INFO - 2025-12-07 11:39:04 --> Security Class Initialized
+DEBUG - 2025-12-07 11:39:04 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-12-07 11:39:04 --> Input Class Initialized
+INFO - 2025-12-07 11:39:04 --> Language Class Initialized
+INFO - 2025-12-07 11:39:04 --> Loader Class Initialized
+INFO - 2025-12-07 11:39:04 --> Helper loaded: url_helper
+INFO - 2025-12-07 11:39:04 --> Database Driver Class Initialized
+INFO - 2025-12-07 11:39:04 --> Session: Class initialized using 'files' driver.
+INFO - 2025-12-07 11:39:04 --> Controller Class Initialized
+INFO - 2025-12-07 11:39:04 --> Model "Post_model" initialized
+INFO - 2025-12-07 11:39:04 --> Helper loaded: form_helper
+INFO - 2025-12-07 11:39:04 --> Form Validation Class Initialized
+INFO - 2025-12-07 11:39:04 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/header.php
+INFO - 2025-12-07 11:39:04 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/import.php
+INFO - 2025-12-07 11:39:04 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/footer.php
+INFO - 2025-12-07 11:39:04 --> Final output sent to browser
+DEBUG - 2025-12-07 11:39:04 --> Total execution time: 0.0067
+INFO - 2025-12-07 11:39:06 --> Config Class Initialized
+INFO - 2025-12-07 11:39:06 --> Hooks Class Initialized
+DEBUG - 2025-12-07 11:39:06 --> UTF-8 Support Enabled
+INFO - 2025-12-07 11:39:06 --> Utf8 Class Initialized
+INFO - 2025-12-07 11:39:06 --> URI Class Initialized
+INFO - 2025-12-07 11:39:06 --> Router Class Initialized
+INFO - 2025-12-07 11:39:06 --> Output Class Initialized
+INFO - 2025-12-07 11:39:06 --> Security Class Initialized
+DEBUG - 2025-12-07 11:39:06 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-12-07 11:39:06 --> Input Class Initialized
+INFO - 2025-12-07 11:39:06 --> Language Class Initialized
+INFO - 2025-12-07 11:39:06 --> Loader Class Initialized
+INFO - 2025-12-07 11:39:06 --> Helper loaded: url_helper
+INFO - 2025-12-07 11:39:06 --> Database Driver Class Initialized
+INFO - 2025-12-07 11:39:06 --> Session: Class initialized using 'files' driver.
+INFO - 2025-12-07 11:39:06 --> Controller Class Initialized
+INFO - 2025-12-07 11:39:06 --> Model "Post_model" initialized
+INFO - 2025-12-07 11:39:06 --> Helper loaded: form_helper
+INFO - 2025-12-07 11:39:06 --> Form Validation Class Initialized
+INFO - 2025-12-07 11:39:06 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/header.php
+INFO - 2025-12-07 11:39:06 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/manage.php
+INFO - 2025-12-07 11:39:06 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/footer.php
+INFO - 2025-12-07 11:39:06 --> Final output sent to browser
+DEBUG - 2025-12-07 11:39:06 --> Total execution time: 0.0137
+INFO - 2025-12-07 11:39:15 --> Config Class Initialized
+INFO - 2025-12-07 11:39:15 --> Hooks Class Initialized
+DEBUG - 2025-12-07 11:39:15 --> UTF-8 Support Enabled
+INFO - 2025-12-07 11:39:15 --> Utf8 Class Initialized
+INFO - 2025-12-07 11:39:15 --> URI Class Initialized
+INFO - 2025-12-07 11:39:15 --> Router Class Initialized
+INFO - 2025-12-07 11:39:15 --> Output Class Initialized
+INFO - 2025-12-07 11:39:15 --> Security Class Initialized
+DEBUG - 2025-12-07 11:39:15 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-12-07 11:39:15 --> Input Class Initialized
+INFO - 2025-12-07 11:39:15 --> Language Class Initialized
+INFO - 2025-12-07 11:39:15 --> Loader Class Initialized
+INFO - 2025-12-07 11:39:15 --> Helper loaded: url_helper
+INFO - 2025-12-07 11:39:15 --> Database Driver Class Initialized
+INFO - 2025-12-07 11:39:15 --> Session: Class initialized using 'files' driver.
+INFO - 2025-12-07 11:39:15 --> Controller Class Initialized
+INFO - 2025-12-07 11:39:15 --> Model "Post_model" initialized
+INFO - 2025-12-07 11:39:15 --> Helper loaded: form_helper
+INFO - 2025-12-07 11:39:15 --> Form Validation Class Initialized
+INFO - 2025-12-07 11:39:15 --> Final output sent to browser
+DEBUG - 2025-12-07 11:39:15 --> Total execution time: 0.0524
+INFO - 2025-12-07 11:39:17 --> Config Class Initialized
+INFO - 2025-12-07 11:39:17 --> Hooks Class Initialized
+DEBUG - 2025-12-07 11:39:17 --> UTF-8 Support Enabled
+INFO - 2025-12-07 11:39:17 --> Utf8 Class Initialized
+INFO - 2025-12-07 11:39:17 --> URI Class Initialized
+INFO - 2025-12-07 11:39:17 --> Router Class Initialized
+INFO - 2025-12-07 11:39:17 --> Output Class Initialized
+INFO - 2025-12-07 11:39:17 --> Security Class Initialized
+DEBUG - 2025-12-07 11:39:17 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-12-07 11:39:17 --> Input Class Initialized
+INFO - 2025-12-07 11:39:17 --> Language Class Initialized
+INFO - 2025-12-07 11:39:17 --> Loader Class Initialized
+INFO - 2025-12-07 11:39:17 --> Helper loaded: url_helper
+INFO - 2025-12-07 11:39:17 --> Database Driver Class Initialized
+INFO - 2025-12-07 11:39:17 --> Session: Class initialized using 'files' driver.
+INFO - 2025-12-07 11:39:17 --> Controller Class Initialized
+INFO - 2025-12-07 11:39:17 --> Model "Post_model" initialized
+INFO - 2025-12-07 11:39:17 --> Helper loaded: form_helper
+INFO - 2025-12-07 11:39:17 --> Form Validation Class Initialized
+INFO - 2025-12-07 11:39:17 --> Final output sent to browser
+DEBUG - 2025-12-07 11:39:17 --> Total execution time: 0.0408
+INFO - 2025-12-07 11:39:18 --> Config Class Initialized
+INFO - 2025-12-07 11:39:18 --> Hooks Class Initialized
+DEBUG - 2025-12-07 11:39:18 --> UTF-8 Support Enabled
+INFO - 2025-12-07 11:39:18 --> Utf8 Class Initialized
+INFO - 2025-12-07 11:39:18 --> URI Class Initialized
+INFO - 2025-12-07 11:39:18 --> Router Class Initialized
+INFO - 2025-12-07 11:39:18 --> Output Class Initialized
+INFO - 2025-12-07 11:39:18 --> Security Class Initialized
+DEBUG - 2025-12-07 11:39:18 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-12-07 11:39:18 --> Input Class Initialized
+INFO - 2025-12-07 11:39:18 --> Language Class Initialized
+INFO - 2025-12-07 11:39:18 --> Loader Class Initialized
+INFO - 2025-12-07 11:39:18 --> Helper loaded: url_helper
+INFO - 2025-12-07 11:39:18 --> Database Driver Class Initialized
+INFO - 2025-12-07 11:39:18 --> Session: Class initialized using 'files' driver.
+INFO - 2025-12-07 11:39:18 --> Controller Class Initialized
+INFO - 2025-12-07 11:39:18 --> Model "Post_model" initialized
+INFO - 2025-12-07 11:39:18 --> Helper loaded: form_helper
+INFO - 2025-12-07 11:39:18 --> Form Validation Class Initialized
+INFO - 2025-12-07 11:39:18 --> Final output sent to browser
+DEBUG - 2025-12-07 11:39:18 --> Total execution time: 0.0442
+INFO - 2025-12-07 11:39:25 --> Config Class Initialized
+INFO - 2025-12-07 11:39:25 --> Hooks Class Initialized
+DEBUG - 2025-12-07 11:39:25 --> UTF-8 Support Enabled
+INFO - 2025-12-07 11:39:25 --> Utf8 Class Initialized
+INFO - 2025-12-07 11:39:25 --> URI Class Initialized
+INFO - 2025-12-07 11:39:25 --> Router Class Initialized
+INFO - 2025-12-07 11:39:25 --> Output Class Initialized
+INFO - 2025-12-07 11:39:25 --> Security Class Initialized
+DEBUG - 2025-12-07 11:39:25 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-12-07 11:39:25 --> Input Class Initialized
+INFO - 2025-12-07 11:39:25 --> Language Class Initialized
+INFO - 2025-12-07 11:39:25 --> Loader Class Initialized
+INFO - 2025-12-07 11:39:25 --> Helper loaded: url_helper
+INFO - 2025-12-07 11:39:25 --> Database Driver Class Initialized
+INFO - 2025-12-07 11:39:25 --> Session: Class initialized using 'files' driver.
+INFO - 2025-12-07 11:39:25 --> Controller Class Initialized
+INFO - 2025-12-07 11:39:25 --> Model "Post_model" initialized
+INFO - 2025-12-07 11:39:25 --> Helper loaded: form_helper
+INFO - 2025-12-07 11:39:25 --> Form Validation Class Initialized
+INFO - 2025-12-07 11:39:25 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/header.php
+INFO - 2025-12-07 11:39:25 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/manage.php
+INFO - 2025-12-07 11:39:25 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/footer.php
+INFO - 2025-12-07 11:39:25 --> Final output sent to browser
+DEBUG - 2025-12-07 11:39:25 --> Total execution time: 0.0136
+INFO - 2025-12-07 11:39:31 --> Config Class Initialized
+INFO - 2025-12-07 11:39:31 --> Hooks Class Initialized
+DEBUG - 2025-12-07 11:39:31 --> UTF-8 Support Enabled
+INFO - 2025-12-07 11:39:31 --> Utf8 Class Initialized
+INFO - 2025-12-07 11:39:31 --> URI Class Initialized
+INFO - 2025-12-07 11:39:31 --> Router Class Initialized
+INFO - 2025-12-07 11:39:31 --> Output Class Initialized
+INFO - 2025-12-07 11:39:31 --> Security Class Initialized
+DEBUG - 2025-12-07 11:39:31 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-12-07 11:39:31 --> Input Class Initialized
+INFO - 2025-12-07 11:39:31 --> Language Class Initialized
+INFO - 2025-12-07 11:39:31 --> Loader Class Initialized
+INFO - 2025-12-07 11:39:31 --> Helper loaded: url_helper
+INFO - 2025-12-07 11:39:31 --> Database Driver Class Initialized
+INFO - 2025-12-07 11:39:31 --> Session: Class initialized using 'files' driver.
+INFO - 2025-12-07 11:39:31 --> Controller Class Initialized
+INFO - 2025-12-07 11:39:31 --> Model "Post_model" initialized
+INFO - 2025-12-07 11:39:31 --> Helper loaded: form_helper
+INFO - 2025-12-07 11:39:31 --> Form Validation Class Initialized
+INFO - 2025-12-07 11:39:31 --> Final output sent to browser
+DEBUG - 2025-12-07 11:39:31 --> Total execution time: 0.0450
+INFO - 2025-12-07 11:39:33 --> Config Class Initialized
+INFO - 2025-12-07 11:39:33 --> Hooks Class Initialized
+DEBUG - 2025-12-07 11:39:33 --> UTF-8 Support Enabled
+INFO - 2025-12-07 11:39:33 --> Utf8 Class Initialized
+INFO - 2025-12-07 11:39:33 --> URI Class Initialized
+INFO - 2025-12-07 11:39:33 --> Router Class Initialized
+INFO - 2025-12-07 11:39:33 --> Output Class Initialized
+INFO - 2025-12-07 11:39:33 --> Security Class Initialized
+DEBUG - 2025-12-07 11:39:33 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-12-07 11:39:33 --> Input Class Initialized
+INFO - 2025-12-07 11:39:33 --> Language Class Initialized
+INFO - 2025-12-07 11:39:33 --> Loader Class Initialized
+INFO - 2025-12-07 11:39:33 --> Helper loaded: url_helper
+INFO - 2025-12-07 11:39:33 --> Database Driver Class Initialized
+INFO - 2025-12-07 11:39:33 --> Session: Class initialized using 'files' driver.
+INFO - 2025-12-07 11:39:33 --> Controller Class Initialized
+INFO - 2025-12-07 11:39:33 --> Model "Post_model" initialized
+INFO - 2025-12-07 11:39:33 --> Helper loaded: form_helper
+INFO - 2025-12-07 11:39:33 --> Form Validation Class Initialized
+INFO - 2025-12-07 11:39:33 --> Final output sent to browser
+DEBUG - 2025-12-07 11:39:33 --> Total execution time: 0.0245
+INFO - 2025-12-07 11:39:34 --> Config Class Initialized
+INFO - 2025-12-07 11:39:34 --> Hooks Class Initialized
+DEBUG - 2025-12-07 11:39:34 --> UTF-8 Support Enabled
+INFO - 2025-12-07 11:39:34 --> Utf8 Class Initialized
+INFO - 2025-12-07 11:39:34 --> URI Class Initialized
+INFO - 2025-12-07 11:39:34 --> Router Class Initialized
+INFO - 2025-12-07 11:39:34 --> Output Class Initialized
+INFO - 2025-12-07 11:39:34 --> Security Class Initialized
+DEBUG - 2025-12-07 11:39:34 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-12-07 11:39:34 --> Input Class Initialized
+INFO - 2025-12-07 11:39:34 --> Language Class Initialized
+INFO - 2025-12-07 11:39:34 --> Loader Class Initialized
+INFO - 2025-12-07 11:39:34 --> Helper loaded: url_helper
+INFO - 2025-12-07 11:39:34 --> Database Driver Class Initialized
+INFO - 2025-12-07 11:39:34 --> Session: Class initialized using 'files' driver.
+INFO - 2025-12-07 11:39:34 --> Controller Class Initialized
+INFO - 2025-12-07 11:39:34 --> Model "Post_model" initialized
+INFO - 2025-12-07 11:39:34 --> Helper loaded: form_helper
+INFO - 2025-12-07 11:39:34 --> Form Validation Class Initialized
+INFO - 2025-12-07 11:39:34 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/header.php
+INFO - 2025-12-07 11:39:34 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/manage.php
+INFO - 2025-12-07 11:39:34 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/footer.php
+INFO - 2025-12-07 11:39:34 --> Final output sent to browser
+DEBUG - 2025-12-07 11:39:34 --> Total execution time: 0.0126
+INFO - 2025-12-07 11:39:39 --> Config Class Initialized
+INFO - 2025-12-07 11:39:39 --> Hooks Class Initialized
+DEBUG - 2025-12-07 11:39:39 --> UTF-8 Support Enabled
+INFO - 2025-12-07 11:39:39 --> Utf8 Class Initialized
+INFO - 2025-12-07 11:39:39 --> URI Class Initialized
+INFO - 2025-12-07 11:39:39 --> Router Class Initialized
+INFO - 2025-12-07 11:39:39 --> Output Class Initialized
+INFO - 2025-12-07 11:39:39 --> Security Class Initialized
+DEBUG - 2025-12-07 11:39:39 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-12-07 11:39:39 --> Input Class Initialized
+INFO - 2025-12-07 11:39:39 --> Language Class Initialized
+INFO - 2025-12-07 11:39:39 --> Loader Class Initialized
+INFO - 2025-12-07 11:39:39 --> Helper loaded: url_helper
+INFO - 2025-12-07 11:39:39 --> Database Driver Class Initialized
+INFO - 2025-12-07 11:39:40 --> Session: Class initialized using 'files' driver.
+INFO - 2025-12-07 11:39:40 --> Controller Class Initialized
+INFO - 2025-12-07 11:39:40 --> Model "Post_model" initialized
+INFO - 2025-12-07 11:39:40 --> Helper loaded: form_helper
+INFO - 2025-12-07 11:39:40 --> Form Validation Class Initialized
+INFO - 2025-12-07 11:39:40 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/header.php
+INFO - 2025-12-07 11:39:40 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/manage.php
+INFO - 2025-12-07 11:39:40 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/footer.php
+INFO - 2025-12-07 11:39:40 --> Final output sent to browser
+DEBUG - 2025-12-07 11:39:40 --> Total execution time: 0.0125
+INFO - 2025-12-07 11:39:43 --> Config Class Initialized
+INFO - 2025-12-07 11:39:43 --> Hooks Class Initialized
+DEBUG - 2025-12-07 11:39:43 --> UTF-8 Support Enabled
+INFO - 2025-12-07 11:39:43 --> Utf8 Class Initialized
+INFO - 2025-12-07 11:39:43 --> URI Class Initialized
+INFO - 2025-12-07 11:39:43 --> Router Class Initialized
+INFO - 2025-12-07 11:39:43 --> Output Class Initialized
+INFO - 2025-12-07 11:39:43 --> Security Class Initialized
+DEBUG - 2025-12-07 11:39:43 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-12-07 11:39:43 --> Input Class Initialized
+INFO - 2025-12-07 11:39:43 --> Language Class Initialized
+INFO - 2025-12-07 11:39:43 --> Loader Class Initialized
+INFO - 2025-12-07 11:39:43 --> Helper loaded: url_helper
+INFO - 2025-12-07 11:39:43 --> Database Driver Class Initialized
+INFO - 2025-12-07 11:39:43 --> Session: Class initialized using 'files' driver.
+INFO - 2025-12-07 11:39:43 --> Controller Class Initialized
+INFO - 2025-12-07 11:39:43 --> Model "Post_model" initialized
+INFO - 2025-12-07 11:39:43 --> Helper loaded: form_helper
+INFO - 2025-12-07 11:39:43 --> Form Validation Class Initialized
+INFO - 2025-12-07 11:39:43 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/header.php
+INFO - 2025-12-07 11:39:43 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/dashboard.php
+INFO - 2025-12-07 11:39:43 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/footer.php
+INFO - 2025-12-07 11:39:43 --> Final output sent to browser
+DEBUG - 2025-12-07 11:39:43 --> Total execution time: 0.0125
+INFO - 2025-12-07 11:41:47 --> Config Class Initialized
+INFO - 2025-12-07 11:41:47 --> Hooks Class Initialized
+DEBUG - 2025-12-07 11:41:47 --> UTF-8 Support Enabled
+INFO - 2025-12-07 11:41:47 --> Utf8 Class Initialized
+INFO - 2025-12-07 11:41:47 --> URI Class Initialized
+INFO - 2025-12-07 11:41:47 --> Router Class Initialized
+INFO - 2025-12-07 11:41:47 --> Output Class Initialized
+INFO - 2025-12-07 11:41:47 --> Security Class Initialized
+DEBUG - 2025-12-07 11:41:47 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-12-07 11:41:47 --> Input Class Initialized
+INFO - 2025-12-07 11:41:47 --> Language Class Initialized
+ERROR - 2025-12-07 11:41:47 --> 404 Page Not Found: Robotstxt/index
+INFO - 2025-12-07 11:48:33 --> Config Class Initialized
+INFO - 2025-12-07 11:48:33 --> Hooks Class Initialized
+DEBUG - 2025-12-07 11:48:33 --> UTF-8 Support Enabled
+INFO - 2025-12-07 11:48:33 --> Utf8 Class Initialized
+INFO - 2025-12-07 11:48:33 --> URI Class Initialized
+INFO - 2025-12-07 11:48:33 --> Router Class Initialized
+INFO - 2025-12-07 11:48:33 --> Output Class Initialized
+INFO - 2025-12-07 11:48:33 --> Security Class Initialized
+DEBUG - 2025-12-07 11:48:33 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-12-07 11:48:33 --> Input Class Initialized
+INFO - 2025-12-07 11:48:33 --> Language Class Initialized
+INFO - 2025-12-07 11:48:33 --> Loader Class Initialized
+INFO - 2025-12-07 11:48:33 --> Helper loaded: url_helper
+INFO - 2025-12-07 11:48:33 --> Database Driver Class Initialized
+INFO - 2025-12-07 11:48:33 --> Session: Class initialized using 'files' driver.
+INFO - 2025-12-07 11:48:33 --> Controller Class Initialized
+INFO - 2025-12-07 11:48:33 --> Model "Post_model" initialized
+INFO - 2025-12-07 11:48:33 --> Helper loaded: form_helper
+INFO - 2025-12-07 11:48:33 --> Form Validation Class Initialized
+INFO - 2025-12-07 11:48:33 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/header.php
+INFO - 2025-12-07 11:48:33 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/import.php
+INFO - 2025-12-07 11:48:33 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/footer.php
+INFO - 2025-12-07 11:48:33 --> Final output sent to browser
+DEBUG - 2025-12-07 11:48:33 --> Total execution time: 0.0283
+INFO - 2025-12-07 11:48:34 --> Config Class Initialized
+INFO - 2025-12-07 11:48:34 --> Hooks Class Initialized
+DEBUG - 2025-12-07 11:48:34 --> UTF-8 Support Enabled
+INFO - 2025-12-07 11:48:34 --> Utf8 Class Initialized
+INFO - 2025-12-07 11:48:34 --> URI Class Initialized
+INFO - 2025-12-07 11:48:34 --> Router Class Initialized
+INFO - 2025-12-07 11:48:34 --> Output Class Initialized
+INFO - 2025-12-07 11:48:34 --> Security Class Initialized
+DEBUG - 2025-12-07 11:48:34 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-12-07 11:48:34 --> Input Class Initialized
+INFO - 2025-12-07 11:48:34 --> Language Class Initialized
+INFO - 2025-12-07 11:48:34 --> Loader Class Initialized
+INFO - 2025-12-07 11:48:34 --> Helper loaded: url_helper
+INFO - 2025-12-07 11:48:34 --> Database Driver Class Initialized
+INFO - 2025-12-07 11:48:34 --> Session: Class initialized using 'files' driver.
+INFO - 2025-12-07 11:48:34 --> Controller Class Initialized
+INFO - 2025-12-07 11:48:34 --> Model "Post_model" initialized
+INFO - 2025-12-07 11:48:34 --> Helper loaded: form_helper
+INFO - 2025-12-07 11:48:34 --> Form Validation Class Initialized
+INFO - 2025-12-07 11:48:34 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/header.php
+INFO - 2025-12-07 11:48:34 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/manage.php
+INFO - 2025-12-07 11:48:34 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/footer.php
+INFO - 2025-12-07 11:48:34 --> Final output sent to browser
+DEBUG - 2025-12-07 11:48:34 --> Total execution time: 0.0135
+INFO - 2025-12-07 11:48:41 --> Config Class Initialized
+INFO - 2025-12-07 11:48:41 --> Hooks Class Initialized
+DEBUG - 2025-12-07 11:48:41 --> UTF-8 Support Enabled
+INFO - 2025-12-07 11:48:41 --> Utf8 Class Initialized
+INFO - 2025-12-07 11:48:41 --> URI Class Initialized
+INFO - 2025-12-07 11:48:41 --> Router Class Initialized
+INFO - 2025-12-07 11:48:41 --> Output Class Initialized
+INFO - 2025-12-07 11:48:41 --> Security Class Initialized
+DEBUG - 2025-12-07 11:48:41 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-12-07 11:48:41 --> Input Class Initialized
+INFO - 2025-12-07 11:48:41 --> Language Class Initialized
+INFO - 2025-12-07 11:48:41 --> Loader Class Initialized
+INFO - 2025-12-07 11:48:41 --> Helper loaded: url_helper
+INFO - 2025-12-07 11:48:41 --> Database Driver Class Initialized
+INFO - 2025-12-07 11:48:41 --> Session: Class initialized using 'files' driver.
+INFO - 2025-12-07 11:48:41 --> Controller Class Initialized
+INFO - 2025-12-07 11:48:41 --> Model "Post_model" initialized
+INFO - 2025-12-07 11:48:41 --> Helper loaded: form_helper
+INFO - 2025-12-07 11:48:41 --> Form Validation Class Initialized
+INFO - 2025-12-07 11:48:41 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/header.php
+INFO - 2025-12-07 11:48:41 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/import.php
+INFO - 2025-12-07 11:48:41 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/footer.php
+INFO - 2025-12-07 11:48:41 --> Final output sent to browser
+DEBUG - 2025-12-07 11:48:41 --> Total execution time: 0.0071
+INFO - 2025-12-07 11:49:02 --> Config Class Initialized
+INFO - 2025-12-07 11:49:02 --> Hooks Class Initialized
+DEBUG - 2025-12-07 11:49:02 --> UTF-8 Support Enabled
+INFO - 2025-12-07 11:49:02 --> Utf8 Class Initialized
+INFO - 2025-12-07 11:49:02 --> URI Class Initialized
+DEBUG - 2025-12-07 11:49:02 --> No URI present. Default controller set.
+INFO - 2025-12-07 11:49:02 --> Router Class Initialized
+INFO - 2025-12-07 11:49:02 --> Output Class Initialized
+INFO - 2025-12-07 11:49:02 --> Security Class Initialized
+DEBUG - 2025-12-07 11:49:02 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-12-07 11:49:02 --> Input Class Initialized
+INFO - 2025-12-07 11:49:02 --> Language Class Initialized
+INFO - 2025-12-07 11:49:02 --> Loader Class Initialized
+INFO - 2025-12-07 11:49:02 --> Helper loaded: url_helper
+INFO - 2025-12-07 11:49:02 --> Database Driver Class Initialized
+INFO - 2025-12-07 11:49:02 --> Session: Class initialized using 'files' driver.
+INFO - 2025-12-07 11:49:02 --> Controller Class Initialized
+INFO - 2025-12-07 11:49:02 --> Model "Post_model" initialized
+INFO - 2025-12-07 11:49:02 --> Helper loaded: form_helper
+INFO - 2025-12-07 11:49:02 --> Form Validation Class Initialized
+INFO - 2025-12-07 11:49:03 --> Config Class Initialized
+INFO - 2025-12-07 11:49:03 --> Hooks Class Initialized
+DEBUG - 2025-12-07 11:49:03 --> UTF-8 Support Enabled
+INFO - 2025-12-07 11:49:03 --> Utf8 Class Initialized
+INFO - 2025-12-07 11:49:03 --> URI Class Initialized
+INFO - 2025-12-07 11:49:03 --> Router Class Initialized
+INFO - 2025-12-07 11:49:03 --> Output Class Initialized
+INFO - 2025-12-07 11:49:03 --> Security Class Initialized
+DEBUG - 2025-12-07 11:49:03 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-12-07 11:49:03 --> Input Class Initialized
+INFO - 2025-12-07 11:49:03 --> Language Class Initialized
+INFO - 2025-12-07 11:49:03 --> Loader Class Initialized
+INFO - 2025-12-07 11:49:03 --> Helper loaded: url_helper
+INFO - 2025-12-07 11:49:03 --> Database Driver Class Initialized
+INFO - 2025-12-07 11:49:03 --> Session: Class initialized using 'files' driver.
+INFO - 2025-12-07 11:49:03 --> Controller Class Initialized
+INFO - 2025-12-07 11:49:03 --> Model "Post_model" initialized
+INFO - 2025-12-07 11:49:03 --> Helper loaded: form_helper
+INFO - 2025-12-07 11:49:03 --> Form Validation Class Initialized
+INFO - 2025-12-07 11:49:03 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/header.php
+INFO - 2025-12-07 11:49:03 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/import.php
+INFO - 2025-12-07 11:49:03 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/footer.php
+INFO - 2025-12-07 11:49:03 --> Final output sent to browser
+DEBUG - 2025-12-07 11:49:03 --> Total execution time: 0.0067
+INFO - 2025-12-07 12:00:07 --> Config Class Initialized
+INFO - 2025-12-07 12:00:07 --> Hooks Class Initialized
+DEBUG - 2025-12-07 12:00:07 --> UTF-8 Support Enabled
+INFO - 2025-12-07 12:00:07 --> Utf8 Class Initialized
+INFO - 2025-12-07 12:00:07 --> URI Class Initialized
+INFO - 2025-12-07 12:00:07 --> Router Class Initialized
+INFO - 2025-12-07 12:00:07 --> Output Class Initialized
+INFO - 2025-12-07 12:00:07 --> Security Class Initialized
+DEBUG - 2025-12-07 12:00:07 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-12-07 12:00:07 --> Input Class Initialized
+INFO - 2025-12-07 12:00:07 --> Language Class Initialized
+INFO - 2025-12-07 12:00:07 --> Loader Class Initialized
+INFO - 2025-12-07 12:00:07 --> Helper loaded: url_helper
+INFO - 2025-12-07 12:00:07 --> Database Driver Class Initialized
+INFO - 2025-12-07 12:00:07 --> Session: Class initialized using 'files' driver.
+INFO - 2025-12-07 12:00:07 --> Controller Class Initialized
+INFO - 2025-12-07 12:00:07 --> Model "Post_model" initialized
+INFO - 2025-12-07 12:00:07 --> Helper loaded: form_helper
+INFO - 2025-12-07 12:00:07 --> Form Validation Class Initialized
+INFO - 2025-12-07 12:00:07 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/header.php
+INFO - 2025-12-07 12:00:07 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/import.php
+INFO - 2025-12-07 12:00:07 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/footer.php
+INFO - 2025-12-07 12:00:07 --> Final output sent to browser
+DEBUG - 2025-12-07 12:00:07 --> Total execution time: 0.0208
+INFO - 2025-12-07 12:00:07 --> Config Class Initialized
+INFO - 2025-12-07 12:00:07 --> Hooks Class Initialized
+DEBUG - 2025-12-07 12:00:07 --> UTF-8 Support Enabled
+INFO - 2025-12-07 12:00:07 --> Utf8 Class Initialized
+INFO - 2025-12-07 12:00:07 --> URI Class Initialized
+INFO - 2025-12-07 12:00:07 --> Router Class Initialized
+INFO - 2025-12-07 12:00:07 --> Output Class Initialized
+INFO - 2025-12-07 12:00:07 --> Security Class Initialized
+DEBUG - 2025-12-07 12:00:07 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-12-07 12:00:07 --> Input Class Initialized
+INFO - 2025-12-07 12:00:07 --> Language Class Initialized
+INFO - 2025-12-07 12:00:07 --> Loader Class Initialized
+INFO - 2025-12-07 12:00:07 --> Helper loaded: url_helper
+INFO - 2025-12-07 12:00:07 --> Database Driver Class Initialized
+INFO - 2025-12-07 12:00:07 --> Session: Class initialized using 'files' driver.
+INFO - 2025-12-07 12:00:07 --> Controller Class Initialized
+INFO - 2025-12-07 12:00:07 --> Model "Post_model" initialized
+INFO - 2025-12-07 12:00:07 --> Helper loaded: form_helper
+INFO - 2025-12-07 12:00:07 --> Form Validation Class Initialized
+INFO - 2025-12-07 12:00:07 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/header.php
+INFO - 2025-12-07 12:00:07 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/manage.php
+INFO - 2025-12-07 12:00:07 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/footer.php
+INFO - 2025-12-07 12:00:07 --> Final output sent to browser
+DEBUG - 2025-12-07 12:00:07 --> Total execution time: 0.0136
+INFO - 2025-12-07 12:00:09 --> Config Class Initialized
+INFO - 2025-12-07 12:00:09 --> Hooks Class Initialized
+DEBUG - 2025-12-07 12:00:09 --> UTF-8 Support Enabled
+INFO - 2025-12-07 12:00:09 --> Utf8 Class Initialized
+INFO - 2025-12-07 12:00:09 --> URI Class Initialized
+INFO - 2025-12-07 12:00:09 --> Router Class Initialized
+INFO - 2025-12-07 12:00:09 --> Output Class Initialized
+INFO - 2025-12-07 12:00:09 --> Security Class Initialized
+DEBUG - 2025-12-07 12:00:09 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-12-07 12:00:09 --> Input Class Initialized
+INFO - 2025-12-07 12:00:09 --> Language Class Initialized
+INFO - 2025-12-07 12:00:09 --> Loader Class Initialized
+INFO - 2025-12-07 12:00:09 --> Helper loaded: url_helper
+INFO - 2025-12-07 12:00:09 --> Database Driver Class Initialized
+INFO - 2025-12-07 12:00:09 --> Session: Class initialized using 'files' driver.
+INFO - 2025-12-07 12:00:09 --> Controller Class Initialized
+INFO - 2025-12-07 12:00:09 --> Model "Post_model" initialized
+INFO - 2025-12-07 12:00:09 --> Helper loaded: form_helper
+INFO - 2025-12-07 12:00:09 --> Form Validation Class Initialized
+INFO - 2025-12-07 12:00:09 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/header.php
+INFO - 2025-12-07 12:00:09 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/import.php
+INFO - 2025-12-07 12:00:09 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/footer.php
+INFO - 2025-12-07 12:00:09 --> Final output sent to browser
+DEBUG - 2025-12-07 12:00:09 --> Total execution time: 0.0068
+INFO - 2025-12-07 12:00:14 --> Config Class Initialized
+INFO - 2025-12-07 12:00:14 --> Hooks Class Initialized
+DEBUG - 2025-12-07 12:00:14 --> UTF-8 Support Enabled
+INFO - 2025-12-07 12:00:14 --> Utf8 Class Initialized
+INFO - 2025-12-07 12:00:14 --> URI Class Initialized
+INFO - 2025-12-07 12:00:14 --> Router Class Initialized
+INFO - 2025-12-07 12:00:14 --> Output Class Initialized
+INFO - 2025-12-07 12:00:14 --> Security Class Initialized
+DEBUG - 2025-12-07 12:00:14 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-12-07 12:00:14 --> Input Class Initialized
+INFO - 2025-12-07 12:00:14 --> Language Class Initialized
+INFO - 2025-12-07 12:00:14 --> Loader Class Initialized
+INFO - 2025-12-07 12:00:14 --> Helper loaded: url_helper
+INFO - 2025-12-07 12:00:14 --> Database Driver Class Initialized
+INFO - 2025-12-07 12:00:14 --> Session: Class initialized using 'files' driver.
+INFO - 2025-12-07 12:00:14 --> Controller Class Initialized
+INFO - 2025-12-07 12:00:14 --> Model "Post_model" initialized
+INFO - 2025-12-07 12:00:14 --> Helper loaded: form_helper
+INFO - 2025-12-07 12:00:14 --> Form Validation Class Initialized
+INFO - 2025-12-07 12:00:15 --> Final output sent to browser
+DEBUG - 2025-12-07 12:00:15 --> Total execution time: 0.6129
+INFO - 2025-12-07 12:00:16 --> Config Class Initialized
+INFO - 2025-12-07 12:00:16 --> Hooks Class Initialized
+DEBUG - 2025-12-07 12:00:16 --> UTF-8 Support Enabled
+INFO - 2025-12-07 12:00:16 --> Utf8 Class Initialized
+INFO - 2025-12-07 12:00:16 --> URI Class Initialized
+INFO - 2025-12-07 12:00:16 --> Router Class Initialized
+INFO - 2025-12-07 12:00:16 --> Output Class Initialized
+INFO - 2025-12-07 12:00:16 --> Security Class Initialized
+DEBUG - 2025-12-07 12:00:16 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-12-07 12:00:16 --> Input Class Initialized
+INFO - 2025-12-07 12:00:16 --> Language Class Initialized
+INFO - 2025-12-07 12:00:16 --> Loader Class Initialized
+INFO - 2025-12-07 12:00:16 --> Helper loaded: url_helper
+INFO - 2025-12-07 12:00:16 --> Database Driver Class Initialized
+INFO - 2025-12-07 12:00:16 --> Session: Class initialized using 'files' driver.
+INFO - 2025-12-07 12:00:16 --> Controller Class Initialized
+INFO - 2025-12-07 12:00:16 --> Model "Post_model" initialized
+INFO - 2025-12-07 12:00:16 --> Helper loaded: form_helper
+INFO - 2025-12-07 12:00:16 --> Form Validation Class Initialized
+INFO - 2025-12-07 12:00:16 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/header.php
+INFO - 2025-12-07 12:00:16 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/manage.php
+INFO - 2025-12-07 12:00:16 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/footer.php
+INFO - 2025-12-07 12:00:16 --> Final output sent to browser
+DEBUG - 2025-12-07 12:00:16 --> Total execution time: 0.0137
+INFO - 2025-12-07 12:00:21 --> Config Class Initialized
+INFO - 2025-12-07 12:00:21 --> Hooks Class Initialized
+DEBUG - 2025-12-07 12:00:21 --> UTF-8 Support Enabled
+INFO - 2025-12-07 12:00:21 --> Utf8 Class Initialized
+INFO - 2025-12-07 12:00:21 --> URI Class Initialized
+INFO - 2025-12-07 12:00:21 --> Router Class Initialized
+INFO - 2025-12-07 12:00:21 --> Output Class Initialized
+INFO - 2025-12-07 12:00:21 --> Security Class Initialized
+DEBUG - 2025-12-07 12:00:21 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-12-07 12:00:21 --> Input Class Initialized
+INFO - 2025-12-07 12:00:21 --> Language Class Initialized
+INFO - 2025-12-07 12:00:21 --> Loader Class Initialized
+INFO - 2025-12-07 12:00:21 --> Helper loaded: url_helper
+INFO - 2025-12-07 12:00:21 --> Database Driver Class Initialized
+INFO - 2025-12-07 12:00:21 --> Session: Class initialized using 'files' driver.
+INFO - 2025-12-07 12:00:21 --> Controller Class Initialized
+INFO - 2025-12-07 12:00:21 --> Model "Post_model" initialized
+INFO - 2025-12-07 12:00:21 --> Helper loaded: form_helper
+INFO - 2025-12-07 12:00:21 --> Form Validation Class Initialized
+INFO - 2025-12-07 12:00:21 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/header.php
+INFO - 2025-12-07 12:00:21 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/dashboard.php
+INFO - 2025-12-07 12:00:21 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/footer.php
+INFO - 2025-12-07 12:00:21 --> Final output sent to browser
+DEBUG - 2025-12-07 12:00:21 --> Total execution time: 0.0127
+INFO - 2025-12-07 12:01:59 --> Config Class Initialized
+INFO - 2025-12-07 12:01:59 --> Hooks Class Initialized
+DEBUG - 2025-12-07 12:01:59 --> UTF-8 Support Enabled
+INFO - 2025-12-07 12:01:59 --> Utf8 Class Initialized
+INFO - 2025-12-07 12:01:59 --> URI Class Initialized
+INFO - 2025-12-07 12:01:59 --> Router Class Initialized
+INFO - 2025-12-07 12:01:59 --> Output Class Initialized
+INFO - 2025-12-07 12:01:59 --> Security Class Initialized
+DEBUG - 2025-12-07 12:01:59 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-12-07 12:01:59 --> Input Class Initialized
+INFO - 2025-12-07 12:01:59 --> Language Class Initialized
+INFO - 2025-12-07 12:01:59 --> Loader Class Initialized
+INFO - 2025-12-07 12:01:59 --> Helper loaded: url_helper
+INFO - 2025-12-07 12:01:59 --> Database Driver Class Initialized
+INFO - 2025-12-07 12:01:59 --> Session: Class initialized using 'files' driver.
+INFO - 2025-12-07 12:01:59 --> Controller Class Initialized
+INFO - 2025-12-07 12:01:59 --> Model "Post_model" initialized
+INFO - 2025-12-07 12:01:59 --> Helper loaded: form_helper
+INFO - 2025-12-07 12:01:59 --> Form Validation Class Initialized
+INFO - 2025-12-07 12:01:59 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/header.php
+INFO - 2025-12-07 12:01:59 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/dashboard.php
+INFO - 2025-12-07 12:01:59 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/footer.php
+INFO - 2025-12-07 12:01:59 --> Final output sent to browser
+DEBUG - 2025-12-07 12:01:59 --> Total execution time: 0.0083
+INFO - 2025-12-07 12:02:00 --> Config Class Initialized
+INFO - 2025-12-07 12:02:00 --> Hooks Class Initialized
+DEBUG - 2025-12-07 12:02:00 --> UTF-8 Support Enabled
+INFO - 2025-12-07 12:02:00 --> Utf8 Class Initialized
+INFO - 2025-12-07 12:02:00 --> URI Class Initialized
+INFO - 2025-12-07 12:02:00 --> Router Class Initialized
+INFO - 2025-12-07 12:02:00 --> Output Class Initialized
+INFO - 2025-12-07 12:02:00 --> Security Class Initialized
+DEBUG - 2025-12-07 12:02:00 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-12-07 12:02:00 --> Input Class Initialized
+INFO - 2025-12-07 12:02:00 --> Language Class Initialized
+INFO - 2025-12-07 12:02:00 --> Loader Class Initialized
+INFO - 2025-12-07 12:02:00 --> Helper loaded: url_helper
+INFO - 2025-12-07 12:02:00 --> Database Driver Class Initialized
+INFO - 2025-12-07 12:02:00 --> Session: Class initialized using 'files' driver.
+INFO - 2025-12-07 12:02:00 --> Controller Class Initialized
+INFO - 2025-12-07 12:02:00 --> Model "Post_model" initialized
+INFO - 2025-12-07 12:02:00 --> Helper loaded: form_helper
+INFO - 2025-12-07 12:02:00 --> Form Validation Class Initialized
+INFO - 2025-12-07 12:02:00 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/header.php
+INFO - 2025-12-07 12:02:00 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/manage.php
+INFO - 2025-12-07 12:02:00 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/footer.php
+INFO - 2025-12-07 12:02:00 --> Final output sent to browser
+DEBUG - 2025-12-07 12:02:00 --> Total execution time: 0.0124
+INFO - 2025-12-07 12:02:01 --> Config Class Initialized
+INFO - 2025-12-07 12:02:01 --> Hooks Class Initialized
+DEBUG - 2025-12-07 12:02:01 --> UTF-8 Support Enabled
+INFO - 2025-12-07 12:02:01 --> Utf8 Class Initialized
+INFO - 2025-12-07 12:02:01 --> URI Class Initialized
+INFO - 2025-12-07 12:02:01 --> Router Class Initialized
+INFO - 2025-12-07 12:02:01 --> Output Class Initialized
+INFO - 2025-12-07 12:02:01 --> Security Class Initialized
+DEBUG - 2025-12-07 12:02:01 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-12-07 12:02:01 --> Input Class Initialized
+INFO - 2025-12-07 12:02:01 --> Language Class Initialized
+INFO - 2025-12-07 12:02:01 --> Loader Class Initialized
+INFO - 2025-12-07 12:02:01 --> Helper loaded: url_helper
+INFO - 2025-12-07 12:02:01 --> Database Driver Class Initialized
+INFO - 2025-12-07 12:02:01 --> Session: Class initialized using 'files' driver.
+INFO - 2025-12-07 12:02:01 --> Controller Class Initialized
+INFO - 2025-12-07 12:02:01 --> Model "Post_model" initialized
+INFO - 2025-12-07 12:02:01 --> Helper loaded: form_helper
+INFO - 2025-12-07 12:02:01 --> Form Validation Class Initialized
+INFO - 2025-12-07 12:02:01 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/header.php
+INFO - 2025-12-07 12:02:01 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/import.php
+INFO - 2025-12-07 12:02:01 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/footer.php
+INFO - 2025-12-07 12:02:01 --> Final output sent to browser
+DEBUG - 2025-12-07 12:02:01 --> Total execution time: 0.0230
+INFO - 2025-12-07 12:02:05 --> Config Class Initialized
+INFO - 2025-12-07 12:02:05 --> Hooks Class Initialized
+DEBUG - 2025-12-07 12:02:05 --> UTF-8 Support Enabled
+INFO - 2025-12-07 12:02:05 --> Utf8 Class Initialized
+INFO - 2025-12-07 12:02:05 --> URI Class Initialized
+INFO - 2025-12-07 12:02:05 --> Router Class Initialized
+INFO - 2025-12-07 12:02:05 --> Output Class Initialized
+INFO - 2025-12-07 12:02:05 --> Security Class Initialized
+DEBUG - 2025-12-07 12:02:05 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-12-07 12:02:05 --> Input Class Initialized
+INFO - 2025-12-07 12:02:05 --> Language Class Initialized
+INFO - 2025-12-07 12:02:05 --> Loader Class Initialized
+INFO - 2025-12-07 12:02:05 --> Helper loaded: url_helper
+INFO - 2025-12-07 12:02:05 --> Database Driver Class Initialized
+INFO - 2025-12-07 12:02:05 --> Session: Class initialized using 'files' driver.
+INFO - 2025-12-07 12:02:05 --> Controller Class Initialized
+INFO - 2025-12-07 12:02:05 --> Model "Post_model" initialized
+INFO - 2025-12-07 12:02:05 --> Helper loaded: form_helper
+INFO - 2025-12-07 12:02:05 --> Form Validation Class Initialized
+INFO - 2025-12-07 12:02:06 --> Final output sent to browser
+DEBUG - 2025-12-07 12:02:06 --> Total execution time: 1.2941
+INFO - 2025-12-07 12:02:08 --> Config Class Initialized
+INFO - 2025-12-07 12:02:08 --> Hooks Class Initialized
+DEBUG - 2025-12-07 12:02:08 --> UTF-8 Support Enabled
+INFO - 2025-12-07 12:02:08 --> Utf8 Class Initialized
+INFO - 2025-12-07 12:02:08 --> URI Class Initialized
+INFO - 2025-12-07 12:02:08 --> Router Class Initialized
+INFO - 2025-12-07 12:02:08 --> Output Class Initialized
+INFO - 2025-12-07 12:02:08 --> Security Class Initialized
+DEBUG - 2025-12-07 12:02:08 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-12-07 12:02:08 --> Input Class Initialized
+INFO - 2025-12-07 12:02:08 --> Language Class Initialized
+INFO - 2025-12-07 12:02:08 --> Loader Class Initialized
+INFO - 2025-12-07 12:02:08 --> Helper loaded: url_helper
+INFO - 2025-12-07 12:02:08 --> Database Driver Class Initialized
+INFO - 2025-12-07 12:02:08 --> Session: Class initialized using 'files' driver.
+INFO - 2025-12-07 12:02:08 --> Controller Class Initialized
+INFO - 2025-12-07 12:02:08 --> Model "Post_model" initialized
+INFO - 2025-12-07 12:02:08 --> Helper loaded: form_helper
+INFO - 2025-12-07 12:02:08 --> Form Validation Class Initialized
+INFO - 2025-12-07 12:02:08 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/header.php
+INFO - 2025-12-07 12:02:08 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/manage.php
+INFO - 2025-12-07 12:02:08 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/footer.php
+INFO - 2025-12-07 12:02:08 --> Final output sent to browser
+DEBUG - 2025-12-07 12:02:08 --> Total execution time: 0.0132
+INFO - 2025-12-07 12:08:48 --> Config Class Initialized
+INFO - 2025-12-07 12:08:48 --> Hooks Class Initialized
+DEBUG - 2025-12-07 12:08:48 --> UTF-8 Support Enabled
+INFO - 2025-12-07 12:08:48 --> Utf8 Class Initialized
+INFO - 2025-12-07 12:08:48 --> URI Class Initialized
+INFO - 2025-12-07 12:08:48 --> Router Class Initialized
+INFO - 2025-12-07 12:08:48 --> Output Class Initialized
+INFO - 2025-12-07 12:08:48 --> Security Class Initialized
+DEBUG - 2025-12-07 12:08:48 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-12-07 12:08:48 --> Input Class Initialized
+INFO - 2025-12-07 12:08:48 --> Language Class Initialized
+INFO - 2025-12-07 12:08:48 --> Loader Class Initialized
+INFO - 2025-12-07 12:08:48 --> Helper loaded: url_helper
+INFO - 2025-12-07 12:08:48 --> Database Driver Class Initialized
+INFO - 2025-12-07 12:08:48 --> Session: Class initialized using 'files' driver.
+INFO - 2025-12-07 12:08:48 --> Controller Class Initialized
+INFO - 2025-12-07 12:08:48 --> Model "Post_model" initialized
+INFO - 2025-12-07 12:08:48 --> Helper loaded: form_helper
+INFO - 2025-12-07 12:08:48 --> Form Validation Class Initialized
+INFO - 2025-12-07 12:08:48 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/header.php
+INFO - 2025-12-07 12:08:48 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/dashboard.php
+INFO - 2025-12-07 12:08:48 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/footer.php
+INFO - 2025-12-07 12:08:48 --> Final output sent to browser
+DEBUG - 2025-12-07 12:08:48 --> Total execution time: 0.0370
+INFO - 2025-12-07 12:09:15 --> Config Class Initialized
+INFO - 2025-12-07 12:09:15 --> Hooks Class Initialized
+DEBUG - 2025-12-07 12:09:15 --> UTF-8 Support Enabled
+INFO - 2025-12-07 12:09:15 --> Utf8 Class Initialized
+INFO - 2025-12-07 12:09:15 --> URI Class Initialized
+INFO - 2025-12-07 12:09:15 --> Router Class Initialized
+INFO - 2025-12-07 12:09:15 --> Output Class Initialized
+INFO - 2025-12-07 12:09:15 --> Security Class Initialized
+DEBUG - 2025-12-07 12:09:15 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-12-07 12:09:15 --> Input Class Initialized
+INFO - 2025-12-07 12:09:15 --> Language Class Initialized
+INFO - 2025-12-07 12:09:15 --> Loader Class Initialized
+INFO - 2025-12-07 12:09:15 --> Helper loaded: url_helper
+INFO - 2025-12-07 12:09:15 --> Database Driver Class Initialized
+INFO - 2025-12-07 12:09:15 --> Session: Class initialized using 'files' driver.
+INFO - 2025-12-07 12:09:15 --> Controller Class Initialized
+INFO - 2025-12-07 12:09:15 --> Model "Post_model" initialized
+INFO - 2025-12-07 12:09:15 --> Helper loaded: form_helper
+INFO - 2025-12-07 12:09:15 --> Form Validation Class Initialized
+INFO - 2025-12-07 12:09:15 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/header.php
+INFO - 2025-12-07 12:09:15 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/dashboard.php
+INFO - 2025-12-07 12:09:15 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/footer.php
+INFO - 2025-12-07 12:09:15 --> Final output sent to browser
+DEBUG - 2025-12-07 12:09:15 --> Total execution time: 0.0078
+INFO - 2025-12-07 12:09:19 --> Config Class Initialized
+INFO - 2025-12-07 12:09:19 --> Hooks Class Initialized
+DEBUG - 2025-12-07 12:09:19 --> UTF-8 Support Enabled
+INFO - 2025-12-07 12:09:19 --> Utf8 Class Initialized
+INFO - 2025-12-07 12:09:19 --> URI Class Initialized
+INFO - 2025-12-07 12:09:19 --> Router Class Initialized
+INFO - 2025-12-07 12:09:19 --> Output Class Initialized
+INFO - 2025-12-07 12:09:19 --> Security Class Initialized
+DEBUG - 2025-12-07 12:09:19 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-12-07 12:09:19 --> Input Class Initialized
+INFO - 2025-12-07 12:09:19 --> Language Class Initialized
+INFO - 2025-12-07 12:09:19 --> Loader Class Initialized
+INFO - 2025-12-07 12:09:19 --> Helper loaded: url_helper
+INFO - 2025-12-07 12:09:19 --> Database Driver Class Initialized
+INFO - 2025-12-07 12:09:19 --> Session: Class initialized using 'files' driver.
+INFO - 2025-12-07 12:09:19 --> Controller Class Initialized
+INFO - 2025-12-07 12:09:19 --> Model "Post_model" initialized
+INFO - 2025-12-07 12:09:19 --> Helper loaded: form_helper
+INFO - 2025-12-07 12:09:19 --> Form Validation Class Initialized
+INFO - 2025-12-07 12:09:19 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/header.php
+INFO - 2025-12-07 12:09:19 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/dashboard.php
+INFO - 2025-12-07 12:09:19 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/footer.php
+INFO - 2025-12-07 12:09:19 --> Final output sent to browser
+DEBUG - 2025-12-07 12:09:19 --> Total execution time: 0.0133
+INFO - 2025-12-07 12:16:05 --> Config Class Initialized
+INFO - 2025-12-07 12:16:05 --> Hooks Class Initialized
+DEBUG - 2025-12-07 12:16:05 --> UTF-8 Support Enabled
+INFO - 2025-12-07 12:16:05 --> Utf8 Class Initialized
+INFO - 2025-12-07 12:16:05 --> URI Class Initialized
+INFO - 2025-12-07 12:16:05 --> Router Class Initialized
+INFO - 2025-12-07 12:16:05 --> Output Class Initialized
+INFO - 2025-12-07 12:16:05 --> Security Class Initialized
+DEBUG - 2025-12-07 12:16:05 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-12-07 12:16:05 --> Input Class Initialized
+INFO - 2025-12-07 12:16:05 --> Language Class Initialized
+INFO - 2025-12-07 12:16:05 --> Loader Class Initialized
+INFO - 2025-12-07 12:16:05 --> Helper loaded: url_helper
+INFO - 2025-12-07 12:16:05 --> Database Driver Class Initialized
+INFO - 2025-12-07 12:16:05 --> Session: Class initialized using 'files' driver.
+INFO - 2025-12-07 12:16:05 --> Controller Class Initialized
+INFO - 2025-12-07 12:16:05 --> Model "Post_model" initialized
+INFO - 2025-12-07 12:16:05 --> Helper loaded: form_helper
+INFO - 2025-12-07 12:16:05 --> Form Validation Class Initialized
+INFO - 2025-12-07 12:16:05 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/header.php
+INFO - 2025-12-07 12:16:05 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/import.php
+INFO - 2025-12-07 12:16:05 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/footer.php
+INFO - 2025-12-07 12:16:05 --> Final output sent to browser
+DEBUG - 2025-12-07 12:16:05 --> Total execution time: 0.0332
+INFO - 2025-12-07 12:16:17 --> Config Class Initialized
+INFO - 2025-12-07 12:16:17 --> Hooks Class Initialized
+DEBUG - 2025-12-07 12:16:17 --> UTF-8 Support Enabled
+INFO - 2025-12-07 12:16:17 --> Utf8 Class Initialized
+INFO - 2025-12-07 12:16:17 --> URI Class Initialized
+INFO - 2025-12-07 12:16:17 --> Router Class Initialized
+INFO - 2025-12-07 12:16:17 --> Output Class Initialized
+INFO - 2025-12-07 12:16:17 --> Security Class Initialized
+DEBUG - 2025-12-07 12:16:17 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-12-07 12:16:17 --> Input Class Initialized
+INFO - 2025-12-07 12:16:17 --> Language Class Initialized
+INFO - 2025-12-07 12:16:17 --> Loader Class Initialized
+INFO - 2025-12-07 12:16:17 --> Helper loaded: url_helper
+INFO - 2025-12-07 12:16:17 --> Database Driver Class Initialized
+INFO - 2025-12-07 12:16:17 --> Session: Class initialized using 'files' driver.
+INFO - 2025-12-07 12:16:17 --> Controller Class Initialized
+INFO - 2025-12-07 12:16:17 --> Model "Post_model" initialized
+INFO - 2025-12-07 12:16:17 --> Helper loaded: form_helper
+INFO - 2025-12-07 12:16:17 --> Form Validation Class Initialized
+INFO - 2025-12-07 12:16:17 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/header.php
+INFO - 2025-12-07 12:16:17 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/manage.php
+INFO - 2025-12-07 12:16:17 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/footer.php
+INFO - 2025-12-07 12:16:17 --> Final output sent to browser
+DEBUG - 2025-12-07 12:16:17 --> Total execution time: 0.0081
+INFO - 2025-12-07 12:28:04 --> Config Class Initialized
+INFO - 2025-12-07 12:28:04 --> Hooks Class Initialized
+DEBUG - 2025-12-07 12:28:04 --> UTF-8 Support Enabled
+INFO - 2025-12-07 12:28:04 --> Utf8 Class Initialized
+INFO - 2025-12-07 12:28:04 --> URI Class Initialized
+INFO - 2025-12-07 12:28:04 --> Router Class Initialized
+INFO - 2025-12-07 12:28:04 --> Output Class Initialized
+INFO - 2025-12-07 12:28:04 --> Security Class Initialized
+DEBUG - 2025-12-07 12:28:04 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-12-07 12:28:04 --> Input Class Initialized
+INFO - 2025-12-07 12:28:04 --> Language Class Initialized
+INFO - 2025-12-07 12:28:04 --> Loader Class Initialized
+INFO - 2025-12-07 12:28:04 --> Helper loaded: url_helper
+INFO - 2025-12-07 12:28:04 --> Database Driver Class Initialized
+INFO - 2025-12-07 12:28:04 --> Session: Class initialized using 'files' driver.
+INFO - 2025-12-07 12:28:04 --> Controller Class Initialized
+INFO - 2025-12-07 12:28:04 --> Model "Post_model" initialized
+INFO - 2025-12-07 12:28:04 --> Helper loaded: form_helper
+INFO - 2025-12-07 12:28:04 --> Form Validation Class Initialized
+INFO - 2025-12-07 12:28:04 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/header.php
+INFO - 2025-12-07 12:28:04 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/import.php
+INFO - 2025-12-07 12:28:04 --> File loaded: /var/www/ci.lnkn.in/application/views/rss/footer.php
+INFO - 2025-12-07 12:28:04 --> Final output sent to browser
+DEBUG - 2025-12-07 12:28:04 --> Total execution time: 0.0306
