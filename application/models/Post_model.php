@@ -47,26 +47,10 @@ class Post_model extends CI_Model {
     }
 
     /* ---------------------------
-         GET ALL POSTS
+         GET ALL POSTS (SIMPLIFIED)
     ----------------------------*/
-  public function get_all_posts($limit = null, $offset = 0, $platform_filter = null) {
-    if ($platform_filter && $platform_filter !== 'all') {
-        // Filter by platform - only get posts with this platform assigned
-        $this->db->select('posts.*, GROUP_CONCAT(post_platforms.platform) as platforms');
-        $this->db->from('posts');
-        $this->db->join('post_platforms', 'post_platforms.post_id = posts.id', 'inner');
-        $this->db->where('post_platforms.platform', $platform_filter);
-        $this->db->group_by('posts.id');
-        $this->db->order_by('posts.priority', 'ASC');
-        
-        if ($limit) {
-            $this->db->limit($limit, $offset);
-        }
-        
-        $query = $this->db->get();
-        $results = $query->result_array();
-    } else {
-        // Get all posts
+    public function get_all_posts($limit = null, $offset = 0) {
+        // Get all posts without filtering
         $this->db->select('posts.*, GROUP_CONCAT(post_platforms.platform) as platforms');
         $this->db->from('posts');
         $this->db->join('post_platforms', 'post_platforms.post_id = posts.id', 'left');
@@ -79,30 +63,19 @@ class Post_model extends CI_Model {
         
         $query = $this->db->get();
         $results = $query->result_array();
-    }
-    
-    // Convert platforms to array
-    foreach ($results as &$result) {
-        $result['platforms'] = $result['platforms'] ? explode(',', $result['platforms']) : array();
-    }
-    
-    return $results;
-}
-    /* --------------------------
-         COUNT POSTS
-    ---------------------------*/
-    public function count_posts($platform_filter = null) {
-        if ($platform_filter && $platform_filter !== 'all') {
-
-            $this->db->select('COUNT(DISTINCT posts.id) as count');
-            $this->db->from('posts');
-            $this->db->join('post_platforms', 'post_platforms.post_id = posts.id', 'left');
-            $this->db->where('post_platforms.platform', $platform_filter);
-
-            $query = $this->db->get();
-            return $query->row()->count ?? 0;
+        
+        // Convert platforms to array
+        foreach ($results as &$result) {
+            $result['platforms'] = $result['platforms'] ? explode(',', $result['platforms']) : array();
         }
+        
+        return $results;
+    }
 
+    /* --------------------------
+         COUNT POSTS (SIMPLIFIED)
+    ---------------------------*/
+    public function count_posts() {
         return $this->db->count_all('posts');
     }
 
@@ -197,7 +170,7 @@ class Post_model extends CI_Model {
                 'post_id' => $post_id,
                 'platform' => $platform
             ]);
-            return 'removed';
+            return 'removed'; 
         }
 
         $this->db->insert('post_platforms', [
