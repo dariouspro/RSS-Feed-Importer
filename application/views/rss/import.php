@@ -316,7 +316,7 @@
                             <i class="fas fa-rss"></i>
                         </span>
                         <input type="url" class="form-control form-control-custom" id="feed_url" name="feed_url" 
-                               placeholder="https://example.com/feed.xml" required>
+                               placeholder="https://example.com/feed.cms" required>
                     </div>
                 </div>
                 
