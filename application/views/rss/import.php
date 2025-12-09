@@ -320,7 +320,7 @@
                     </div>
                 </div>
                 
-                <div class="mb-4">
+                <div class="mb-4"> 
                     <div class="input-label">
                         <i class="fas fa-sort me-2"></i> Sort Articles By
                     </div>

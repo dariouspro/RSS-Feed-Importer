@@ -288,83 +288,96 @@
                                     <p class="card-text text-muted mb-4">
                                         <?= htmlspecialchars(substr($post['content'], 0, 200)) ?><?= strlen($post['content']) > 200 ? '...' : '' ?>
                                     </p>
-								 <!-- Platform Distribution -->
-								<div class="mb-3">
-									<p class="text-muted mb-2 small">Assigned Platforms:</p>
-									<div class="d-flex flex-wrap gap-2">
-										<?php 
-										// Platform icons mapping
-										$platform_icons = [
-											'X (Twitter)' => 'bi bi-twitter-x',
-											'Facebook' => 'bi bi-facebook',
-											'LinkedIn' => 'bi bi-linkedin',
-											'Instagram' => 'bi bi-instagram',
-											'TikTok' => 'bi bi-tiktok',
-											'Threads' => 'bi bi-threads'
-										];
-										
-										// Platform styles mapping
-										$platform_styles = [
-											'X (Twitter)' => 'bg-dark text-white',
-											'Facebook' => 'bg-primary text-white',
-											'LinkedIn' => 'bg-info text-white',
-											'Instagram' => 'bg-danger text-white',
-											'TikTok' => 'bg-dark text-white',
-											'Threads' => 'bg-purple text-white'
-										];
-										
-										// Show assigned platforms
-										foreach ($post['platforms'] as $platform): 
-											$is_selected = ($platform_filter !== 'all' && $platform === $platform_filter);
-											
-											$style_class = isset($platform_styles[$platform]) ? $platform_styles[$platform] : 'bg-secondary text-white';
-											
-											if ($is_selected) {
-												$style_class .= ' border border-3 border-warning';
-											}
-											
-											$icon = isset($platform_icons[$platform]) ? $platform_icons[$platform] : 'bi bi-share';
-										?>
-											<span class="badge <?= $style_class ?> d-flex align-items-center">
-												<i class="<?= $icon ?> me-1"></i> <?= $platform ?>
+																		<!-- Platform Distribution -->
+											<div class="mb-3">
+												<p class="text-muted mb-2 small">Assigned Platforms:</p>
+												<div class="d-flex flex-wrap gap-2">
+													<?php 
+													// Platform icons
+													$platform_icons = [
+														'X (Twitter)' => 'bi bi-twitter-x',
+														'Facebook' => 'bi bi-facebook',
+														'LinkedIn' => 'bi bi-linkedin',
+														'Instagram' => 'bi bi-instagram',
+														'TikTok' => 'bi bi-tiktok',
+														'Threads' => 'bi bi-threads'
+													];
+													
+													// Show ALL platforms for this post
+													foreach ($post['platforms'] as $platform): 
+														$is_selected_platform = ($platform_filter !== 'all' && $platform === $platform_filter);
+														
+														// Default style
+														$badge_class = 'bg-secondary bg-opacity-25 text-dark border';
+														
+														// Highlight filtered platform
+														if ($is_selected_platform) {
+															$badge_class = 'bg-warning text-dark border-3 border-dark fw-bold';
+														}
+														
+														$icon = isset($platform_icons[$platform]) ? $platform_icons[$platform] : 'bi bi-share';
+													?>
+														<span class="badge <?= $badge_class ?> d-flex align-items-center px-3 py-2">
+															<i class="<?= $icon ?> me-2"></i>
+															<span><?= $platform ?></span>
+															
+															<?php if ($is_selected_platform): ?>
+																<i class="bi bi-funnel-fill ms-2"></i>
+															<?php endif; ?>
+														</span>
+													<?php endforeach; ?>
+												</div>
 												
-												<?php if ($is_selected): ?>
-													<i class="bi bi-check-circle ms-1"></i>
+												<!-- Info about why post is shown -->
+												<?php if ($platform_filter !== 'all'): ?>
+													<div class="mt-2">
+														<small class="text-success">
+															<i class="bi bi-info-circle me-1"></i>
+															Showing this post because it's assigned to <strong><?= $platform_filter ?></strong>
+															<?php if (count($post['platforms']) > 1): ?>
+																(and <?= count($post['platforms']) - 1 ?> other platform<?= count($post['platforms']) > 2 ? 's' : '' ?>)
+															<?php endif; ?>
+														</small>
+													</div>
 												<?php endif; ?>
-											</span>
-										<?php endforeach; ?>
-									</div>
-								</div>													  
-							 <!-- Post Status -->
-									<div class="d-flex justify-content-between align-items-center pt-3 border-top">
-										<div class="text-muted small">
-											<?php 
-											$platform_count = count($post['platforms']);
-											$platform_text = $platform_count === 1 ? 'platform' : 'platforms';
-											
-											if ($platform_filter === 'all') {
-												echo '<i class="bi bi-grid-3x3-gap me-1"></i>';
-												echo "Assigned to <strong>{$platform_count}</strong> {$platform_text}";
-											} else {
-												echo '<i class="bi bi-check-circle-fill text-success me-1"></i>';
-												echo "Has <strong>{$platform_filter}</strong> platform";
-											}
-											?>
-										</div>
-										
-										<div class="d-flex align-items-center gap-2">
+											</div>
+																<!-- Post Status -->
+										<div class="d-flex justify-content-between align-items-center pt-3 border-top">
 											<div class="text-muted small">
-												<i class="bi bi-clock me-1"></i>
-												<?= date('g:i A', strtotime($post['pub_date'])) ?>
+												<?php 
+												$platform_count = count($post['platforms']);
+												$platform_text = $platform_count === 1 ? 'platform' : 'platforms';
+												
+												if ($platform_filter === 'all') {
+													echo '<i class="bi bi-grid-3x3-gap me-1"></i>';
+													echo "Assigned to <strong>{$platform_count}</strong> {$platform_text}";
+												} else {
+													$has_selected_platform = in_array($platform_filter, $post['platforms']);
+													echo '<i class="bi bi-filter-circle text-primary me-1"></i>';
+													echo "Filtered by <strong>{$platform_filter}</strong>";
+													
+													if ($has_selected_platform && $platform_count > 1) {
+														echo " (also on " . ($platform_count - 1) . " other platform" . ($platform_count > 2 ? 's' : '') . ")";
+													}
+												}
+												?>
 											</div>
 											
-											<?php if ($platform_filter !== 'all'): ?>
-												<span class="badge bg-success bg-opacity-10 text-success border border-success">
-													<i class="bi bi-check-lg me-1"></i> Included
-												</span>
-											<?php endif; ?>
+											<div class="d-flex align-items-center gap-2">
+												<div class="text-muted small">
+													<i class="bi bi-clock me-1"></i>
+													<?= date('g:i A', strtotime($post['pub_date'])) ?>
+												</div>
+												
+												<?php if ($platform_filter !== 'all'): ?>
+													<?php if (in_array($platform_filter, $post['platforms'])): ?>
+														<span class="badge bg-warning text-dark border border-dark" title="This post has the selected platform">
+															<i class="bi bi-filter-circle-fill me-1"></i> Filter Match
+														</span>
+													<?php endif; ?>
+												<?php endif; ?>
+											</div>
 										</div>
-									</div>
                                 </div>
                             </div>
                         </div>
@@ -503,6 +516,36 @@
         border-color: #0d6efd;
         box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
     }
+	
+	/* Highlight selected platform badge */
+.badge.bg-warning {
+    box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.3);
+    position: relative;
+}
+
+.badge.bg-warning::after {
+    content: "✓";
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #198754;
+    color: white;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* Make other platforms slightly muted when filtering */
+<?php if ($platform_filter !== 'all'): ?>
+.badge:not(.bg-warning) {
+    opacity: 0.8;
+}
+<?php endif; ?>
 </style>
 
 <script>

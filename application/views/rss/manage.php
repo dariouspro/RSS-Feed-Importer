@@ -10,6 +10,11 @@
     <div class="mb-5">
         <h1 class="display-6 fw-bold mb-2">Manage Posts</h1>
         <p class="text-muted">Organize and manage your imported RSS feed posts (<?= $total_posts ?> total)</p>
+        
+        <!-- Debug Info (optional, remove in production) -->
+        <div class="alert alert-info small">
+            <strong>Page Info:</strong> Showing <?= count($posts) ?> posts on page <?= $current_page ?> of <?= $total_pages ?> (<?= $per_page ?> per page)
+        </div>
     </div>
 
     <?php if (empty($posts)): ?>
@@ -29,16 +34,22 @@
     <?php else: ?>
         <!-- Posts List -->
         <div id="posts-container" class="mb-5">
-            <?php foreach ($posts as $index => $post): ?>
-                <?php 
+            <?php 
+            $current_page = $current_page;
+            $per_page = $per_page;
+            $start_priority = (($current_page - 1) * $per_page) + 1;
+            
+            foreach ($posts as $index => $post): 
                 $has_twitter = in_array('X (Twitter)', $post['platforms']);
                 $exceeds_limit = $has_twitter && $post['char_count'] > 280;
-                ?>
+                $display_priority = $start_priority + $index;
+            ?>
                 <div class="card mb-3 border <?= $exceeds_limit ? 'border-danger border-2' : 'border-light' ?> post-item" 
                      draggable="true" 
                      data-id="<?= $post['id'] ?>"
-                     data-priority="<?= $post['priority'] ?>"
-                     data-original-index="<?= $index ?>">
+                     data-original-priority="<?= $post['priority'] ?>"
+                     data-display-priority="<?= $display_priority ?>"
+                     data-index="<?= $index ?>">
                     
                     <!-- Drag Handle -->
                     <div class="drag-handle position-absolute top-50 start-0 translate-middle-y ms-3">
@@ -64,13 +75,16 @@
                                 <div class="d-flex justify-content-between align-items-start mb-3">
                                     <div class="d-flex flex-wrap gap-2">
                                         <span class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 priority-badge">
-                                            <i class="bi bi-flag me-1"></i> Priority <?= $post['priority'] ?>
+                                            <i class="bi bi-flag me-1"></i> Priority <?= $display_priority ?>
                                         </span>
                                         <span class="badge bg-secondary bg-opacity-10 text-secondary">
                                             <?= date('M d, Y', strtotime($post['pub_date'])) ?>
                                         </span>
                                         <span class="badge <?= $exceeds_limit ? 'bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25' : 'bg-info bg-opacity-10 text-info' ?>">
                                             <?= $post['char_count'] ?> chars
+                                        </span>
+                                        <span class="badge bg-warning bg-opacity-10 text-warning small">
+                                            DB Priority: <?= $post['priority'] ?>
                                         </span>
                                     </div>
                                     
@@ -104,24 +118,24 @@
                                 </div>
                                 <?php endif; ?>
                                 
-                                <!-- Platform Selection with Dropdown -->
+                                <!-- Platform Selection -->
                                 <div class="platform-selection" data-post-id="<?= $post['id'] ?>">
                                     <div class="row align-items-end">
                                         <div class="col-md-8">
                                             <label class="form-label text-muted small mb-1">Select platforms for this post:</label>
                                             <select class="form-select platform-select" multiple size="3" data-post-id="<?= $post['id'] ?>">
-                                                <?php foreach ($platforms as $platform): ?>
-                                                    <?php 
-																  $platform_icons = [
-														'X (Twitter)' => 'bi bi-twitter-x text-dark',
-														'Facebook' => 'bi bi-facebook text-primary',
-														'LinkedIn' => 'bi bi-linkedin text-info',
-														'Instagram' => 'bi bi-instagram text-danger',
-														'TikTok' => 'bi bi-tiktok text-dark',
-														'Threads' => 'bi bi-threads text-purple'
-													];
+                                                <?php 
+                                                $platform_icons = [
+                                                    'X (Twitter)' => 'bi bi-twitter-x text-dark',
+                                                    'Facebook' => 'bi bi-facebook text-primary',
+                                                    'LinkedIn' => 'bi bi-linkedin text-info',
+                                                    'Instagram' => 'bi bi-instagram text-danger',
+                                                    'TikTok' => 'bi bi-tiktok text-dark',
+                                                    'Threads' => 'bi bi-threads text-purple'
+                                                ];
+                                                foreach ($platforms as $platform): 
                                                     $icon = isset($platform_icons[$platform]) ? $platform_icons[$platform] : 'bi bi-share';
-                                                    ?>
+                                                ?>
                                                     <option value="<?= $platform ?>" 
                                                             <?= in_array($platform, $post['platforms']) ? 'selected' : '' ?>
                                                             data-icon="<?= $icon ?>">
@@ -141,19 +155,11 @@
                                     
                                     <!-- Current Selection Display -->
                                     <div class="mt-2">
-                                        <p class="text-muted mb-1 small">Currently assigned:</p>
+                                        <p class="text-muted mb-1 small">Currently assigned:Press Ctrl to Select Multiple and For MAC use CMD</p>
                                         <div class="d-flex flex-wrap gap-1 current-platforms" id="current-platforms-<?= $post['id'] ?>">
                                             <?php if (!empty($post['platforms'])): ?>
                                                 <?php foreach ($post['platforms'] as $platform): ?>
                                                     <?php 
-																 $platform_icons = [
-													'X (Twitter)' => 'bi bi-twitter-x text-dark',
-													'Facebook' => 'bi bi-facebook text-primary',
-													'LinkedIn' => 'bi bi-linkedin text-info',
-													'Instagram' => 'bi bi-instagram text-danger',
-													'TikTok' => 'bi bi-tiktok text-dark',
-													'Threads' => 'bi bi-threads text-purple'
-												];
                                                     $icon = isset($platform_icons[$platform]) ? $platform_icons[$platform] : 'bi bi-share';
                                                     ?>
                                                     <span class="badge bg-primary d-flex align-items-center">
@@ -263,17 +269,6 @@
         font-weight: 500;
     }
     
-    .platform-badge {
-        border-radius: 20px;
-        padding: 0.4rem 0.8rem;
-        font-size: 0.875rem;
-        transition: all 0.2s ease;
-    }
-    
-    .platform-badge:hover {
-        transform: translateY(-1px);
-    }
-    
     .page-item.active .page-link {
         background-color: #0d6efd;
         border-color: #0d6efd;
@@ -287,7 +282,6 @@
         animation: fadeInOut 1.5s ease;
     }
     
-    /* Platform Selection Styles */
     .platform-select {
         height: auto;
         min-height: 100px;
@@ -313,12 +307,6 @@
         color: white;
     }
     
-    .platform-select option:checked::before {
-        font-family: "bootstrap-icons";
-        content: "\F26A";
-        margin-right: 8px;
-    }
-    
     .save-platforms-btn:disabled {
         opacity: 0.6;
         cursor: not-allowed;
@@ -342,7 +330,6 @@
         100% { opacity: 0; transform: scale(0.8); }
     }
     
-    /* Multi-select hint */
     .select-hint {
         font-size: 0.75rem;
         color: #6c757d;
@@ -351,12 +338,12 @@
 </style>
 
 <script>
-// Drag and Drop Implementation
+// Global variables
 let draggedItem = null;
 let draggedItemIndex = null;
 let originalPosition = null;
 
-// Initialize drag and drop for all posts
+// Initialize drag and drop
 function initializeDragAndDrop() {
     const postItems = document.querySelectorAll('.post-item');
     
@@ -387,19 +374,16 @@ function handleDragStart(e) {
     draggedItem = this;
     draggedItemIndex = Array.from(this.parentNode.children).indexOf(this);
     
-    // Store original position for potential revert
+    // Store original position
     originalPosition = {
         parent: this.parentNode,
-        nextSibling: this.nextSibling
+        index: draggedItemIndex
     };
     
     this.classList.add('dragging');
-    
-    // Set drag image and data
     e.dataTransfer.effectAllowed = 'move';
     e.dataTransfer.setData('text/plain', this.dataset.id);
     
-    // Make it semi-transparent
     setTimeout(() => {
         this.style.opacity = '0.4';
     }, 0);
@@ -467,11 +451,14 @@ function handleDrop(e) {
         this.style.transform = '';
         
         // Determine where to insert
+        let targetIndex;
         if (y < threshold) {
             // Insert above
+            targetIndex = Array.from(this.parentNode.children).indexOf(this);
             this.parentNode.insertBefore(draggedItem, this);
         } else {
             // Insert below
+            targetIndex = Array.from(this.parentNode.children).indexOf(this) + 1;
             if (this.nextSibling) {
                 this.parentNode.insertBefore(draggedItem, this.nextSibling);
             } else {
@@ -479,30 +466,40 @@ function handleDrop(e) {
             }
         }
         
-        // Update priorities visually
+        // Calculate new priority based on page position
+        const posts = Array.from(document.querySelectorAll('.post-item'));
+        const currentPage = <?= $current_page ?>;
+        const perPage = <?= $per_page ?>;
+        const newPosition = posts.indexOf(draggedItem);
+        const newGlobalPriority = ((currentPage - 1) * perPage) + newPosition + 1;
+        
+        // Update visual display
         updateVisualPriorities();
         
-        // Send update to server
-        updatePriorityOnServer(draggedItem.dataset.id, this.dataset.priority);
+        // Send update to server with GLOBAL priority
+        updatePriorityOnServer(draggedItem.dataset.id, newGlobalPriority, draggedItem.dataset.originalPriority);
     }
 }
 
 // Update priority badges visually
 function updateVisualPriorities() {
     const posts = document.querySelectorAll('.post-item');
+    const currentPage = <?= $current_page ?>;
+    const perPage = <?= $per_page ?>;
+    
     posts.forEach((post, index) => {
         const priorityBadge = post.querySelector('.priority-badge');
         if (priorityBadge) {
-            const newPriority = index + 1;
-            priorityBadge.innerHTML = `\<i class="bi bi-flag me-1"></i> Priority ${newPriority}`;
-            post.dataset.priority = newPriority;
+            const globalPriority = ((currentPage - 1) * perPage) + index + 1;
+            priorityBadge.innerHTML = `<i class="bi bi-flag me-1"></i> Priority ${globalPriority}`;
+            post.dataset.displayPriority = globalPriority;
         }
     });
 }
 
-// Update priority on server via AJAX
-function updatePriorityOnServer(postId, targetPriority) {
-    // Show loading state on dragged item
+// Update priority on server
+function updatePriorityOnServer(postId, newGlobalPriority, oldGlobalPriority) {
+    // Show loading
     const dragHandle = draggedItem.querySelector('.drag-handle');
     const originalHandleContent = dragHandle.innerHTML;
     dragHandle.innerHTML = '<div class="spinner-border spinner-border-sm text-primary"></div>';
@@ -514,30 +511,26 @@ function updatePriorityOnServer(postId, targetPriority) {
             'Content-Type': 'application/x-www-form-urlencoded',
             'X-Requested-With': 'XMLHttpRequest'
         },
-        body: `post_id=${postId}&new_priority=${targetPriority}`
+        body: `post_id=${postId}&new_priority=${newGlobalPriority}`
     })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    })
+    .then(response => response.json())
     .then(data => {
-        // Show feedback
         showFeedback(draggedItem, data.success ? 'success' : 'error');
         
-        if (!data.success) {
-            // Revert position on failure
+        if (data.success) {
+            // Update the original priority attribute
+            draggedItem.dataset.originalPriority = newGlobalPriority;
+        } else {
+            // Revert on failure
             revertPosition();
         }
     })
     .catch(error => {
-        console.error('Error updating priority:', error);
+        console.error('Error:', error);
         showFeedback(draggedItem, 'error');
         revertPosition();
     })
     .finally(() => {
-        // Restore drag handle
         setTimeout(() => {
             dragHandle.innerHTML = originalHandleContent;
         }, 500);
@@ -546,13 +539,11 @@ function updatePriorityOnServer(postId, targetPriority) {
 
 // Show visual feedback
 function showFeedback(element, type) {
-    // Remove existing feedback
     const existingFeedback = element.querySelector('.drag-feedback');
     if (existingFeedback) {
         existingFeedback.remove();
     }
     
-    // Create new feedback
     const feedback = document.createElement('div');
     feedback.className = `drag-feedback badge bg-${type === 'success' ? 'success' : 'danger'}`;
     feedback.innerHTML = type === 'success' ? 
@@ -561,7 +552,6 @@ function showFeedback(element, type) {
     
     element.appendChild(feedback);
     
-    // Remove after animation
     setTimeout(() => {
         if (feedback.parentNode) {
             feedback.remove();
@@ -571,51 +561,38 @@ function showFeedback(element, type) {
 
 // Revert to original position
 function revertPosition() {
-    if (originalPosition) {
-        if (originalPosition.nextSibling) {
-            originalPosition.parent.insertBefore(draggedItem, originalPosition.nextSibling);
+    if (originalPosition && originalPosition.parent) {
+        const posts = Array.from(originalPosition.parent.children);
+        if (posts[originalPosition.index]) {
+            originalPosition.parent.insertBefore(draggedItem, posts[originalPosition.index]);
         } else {
             originalPosition.parent.appendChild(draggedItem);
         }
-        
-        // Update visual priorities after revert
         updateVisualPriorities();
     }
 }
 
-// Platform Selection with Dropdown and Save Button
+// Platform Selection Functions
 function initializePlatformSelection() {
-    // Update current platforms display when dropdown changes
     document.querySelectorAll('.platform-select').forEach(select => {
         select.addEventListener('change', function() {
             updateCurrentPlatformsDisplay(this);
         });
     });
     
-    // Handle save button clicks
     document.addEventListener('click', function(e) {
         if (e.target.closest('.save-platforms-btn')) {
             const button = e.target.closest('.save-platforms-btn');
             savePlatforms(button);
         }
     });
-    
-    // Add multi-select hint
-    document.querySelectorAll('.platform-select').forEach(select => {
-        const hint = document.createElement('small');
-        hint.className = 'select-hint';
-        hint.innerHTML = 'Hold Ctrl (Cmd on Mac) to select multiple';
-        select.parentNode.appendChild(hint);
-    });
 }
 
-// Update the current platforms display
 function updateCurrentPlatformsDisplay(selectElement) {
     const postId = selectElement.dataset.postId;
     const selectedOptions = Array.from(selectElement.selectedOptions);
     const currentPlatformsDiv = document.getElementById(`current-platforms-${postId}`);
     
-    // Clear current display
     currentPlatformsDiv.innerHTML = '';
     
     if (selectedOptions.length === 0) {
@@ -623,7 +600,6 @@ function updateCurrentPlatformsDisplay(selectElement) {
         return;
     }
     
-    // Add badges for each selected platform
     selectedOptions.forEach(option => {
         const platform = option.value;
         const icon = option.dataset.icon || 'bi bi-share';
@@ -636,7 +612,6 @@ function updateCurrentPlatformsDisplay(selectElement) {
     });
 }
 
-// Save platforms to server
 function savePlatforms(button) {
     const postId = button.dataset.postId;
     const selectElement = document.querySelector(`.platform-select[data-post-id="${postId}"]`);
@@ -648,7 +623,6 @@ function savePlatforms(button) {
     const originalText = button.innerHTML;
     button.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span> Saving...';
     
-    // Send AJAX request to update all platforms at once
     fetch('<?= base_url('rss/update_platforms') ?>', {
         method: 'POST',
         headers: {
@@ -660,29 +634,19 @@ function savePlatforms(button) {
             platforms: selectedPlatforms
         })
     })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    })
+    .then(response => response.json())
     .then(data => {
         if (data.success) {
-            // Show success feedback
             showPlatformSaveFeedback(button, 'success', 'Saved!');
-            console.log('Platforms updated:', data);
         } else {
-            // Show error feedback
             showPlatformSaveFeedback(button, 'error', 'Failed!');
-            console.error('Save failed:', data.message);
         }
     })
     .catch(error => {
-        console.error('Error saving platforms:', error);
+        console.error('Error:', error);
         showPlatformSaveFeedback(button, 'error', 'Error!');
     })
     .finally(() => {
-        // Re-enable button after delay
         setTimeout(() => {
             button.disabled = false;
             button.innerHTML = originalText;
@@ -690,24 +654,19 @@ function savePlatforms(button) {
     });
 }
 
-// Show feedback for platform save
 function showPlatformSaveFeedback(button, type, message) {
-    // Remove existing feedback
     const existingFeedback = button.parentNode.querySelector('.save-feedback');
     if (existingFeedback) {
         existingFeedback.remove();
     }
     
-    // Create feedback element
     const feedback = document.createElement('div');
     feedback.className = `save-feedback position-absolute mt-1 small text-${type === 'success' ? 'success' : 'danger'}`;
     feedback.innerHTML = `<i class="bi bi-${type === 'success' ? 'check' : 'x'}-circle me-1"></i> ${message}`;
-    feedback.style.fontSize = '0.75rem';
     
     button.parentNode.style.position = 'relative';
     button.parentNode.appendChild(feedback);
     
-    // Remove feedback after 3 seconds
     setTimeout(() => {
         if (feedback.parentNode) {
             feedback.remove();
@@ -715,7 +674,7 @@ function showPlatformSaveFeedback(button, type, message) {
     }, 3000);
 }
 
-// Initialize everything when page loads
+// Initialize everything
 document.addEventListener('DOMContentLoaded', function() {
     initializeDragAndDrop();
     initializePlatformSelection();

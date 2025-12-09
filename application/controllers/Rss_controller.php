@@ -9,9 +9,10 @@ class Rss_controller extends CI_Controller
     {
         parent::__construct();
         $this->load->model("Post_model");
-        $this->load->model("Social_media_model"); // Load new model
+        $this->load->model("Social_media_model");
         $this->load->helper(["url", "form"]);
         $this->load->library("form_validation");
+        $this->load->library("session");
 
         // Fetch platforms from database
         $this->platforms = $this->Social_media_model->get_all_platforms();
@@ -25,58 +26,58 @@ class Rss_controller extends CI_Controller
     public function import()
     {
         $data["active_tab"] = "import";
-        $data["platforms"] = $this->platforms; // Pass to view
+        $data["platforms"] = $this->platforms;
         $this->load->view("rss/header", $data);
         $this->load->view("rss/import", $data);
         $this->load->view("rss/footer");
     }
 
-    public function manage()
-    {
-        $per_page = 10;
-        $page = $this->input->get("page") ?? 1;
-        $platform_filter = $this->input->get("platform") ?? "all";
-        $offset = ($page - 1) * $per_page;
+public function manage()
+{
+    $per_page = 10;
+    $page = $this->input->get('page') ? intval($this->input->get('page')) : 1;
+    if ($page < 1) $page = 1;
+    
+    $offset = ($page - 1) * $per_page;
+    
+    // Use manage-specific function to get ALL posts
+    $data['posts'] = $this->Post_model->get_posts_for_manage($per_page, $offset);
+    $data['total_posts'] = $this->Post_model->count_all_posts();
+    $data['current_page'] = $page;
+    $data['total_pages'] = ceil($data['total_posts'] / $per_page);
+    $data['per_page'] = $per_page;
+    $data['platforms'] = $this->platforms;
+    $data['active_tab'] = 'manage';
+    
+    $this->load->view('rss/header', $data);
+    $this->load->view('rss/manage', $data);
+    $this->load->view('rss/footer');
+}
 
-        $data["posts"] = $this->Post_model->get_all_posts(
-            $per_page,
-            $offset,
-            $platform_filter
-        );
-        $data["total_posts"] = $this->Post_model->count_posts($platform_filter);
-        $data["current_page"] = $page;
-        $data["total_pages"] = ceil($data["total_posts"] / $per_page);
-        $data["per_page"] = $per_page;
-        $data["platforms"] = $this->platforms;
-        $data["platform_filter"] = $platform_filter;
-        $data["active_tab"] = "manage";
 
-        $this->load->view("rss/header", $data);
-        $this->load->view("rss/manage", $data);
-        $this->load->view("rss/footer");
-    }
+public function dashboard()
+{
+    $per_page = 10;
+    $page = $this->input->get("page") ? intval($this->input->get("page")) : 1;
+    if ($page < 1) $page = 1;
+    
+    $platform_filter = $this->input->get("platform") ?? "all";
+    $offset = ($page - 1) * $per_page;
 
-    public function dashboard()
-    {
-        $per_page = 10;
-        $page = $this->input->get("page") ?? 1;
-        $platform_filter = $this->input->get("platform") ?? "all";
-        $offset = ($page - 1) * $per_page;
+    // Use dashboard-specific function
+    $data["posts"] = $this->Post_model->get_posts_for_dashboard($platform_filter, $per_page, $offset);
+    $data["total_posts"] = $this->Post_model->count_posts_for_dashboard($platform_filter);
+    $data["current_page"] = $page;
+    $data["total_pages"] = ceil($data["total_posts"] / $per_page);
+    $data["per_page"] = $per_page;
+    $data["platforms"] = $this->platforms;
+    $data["platform_filter"] = $platform_filter;
+    $data["active_tab"] = "dashboard";
 
-        // IMPORTANT: Get ALL posts, not filtered by platform
-        $data["posts"] = $this->Post_model->get_all_posts($per_page, $offset);
-        $data["total_posts"] = $this->Post_model->count_posts();
-        $data["current_page"] = $page;
-        $data["total_pages"] = ceil($data["total_posts"] / $per_page);
-        $data["per_page"] = $per_page;
-        $data["platforms"] = $this->platforms;
-        $data["platform_filter"] = $platform_filter;
-        $data["active_tab"] = "dashboard";
-
-        $this->load->view("rss/header", $data);
-        $this->load->view("rss/dashboard", $data);
-        $this->load->view("rss/footer");
-    }
+    $this->load->view("rss/header", $data);
+    $this->load->view("rss/dashboard", $data);
+    $this->load->view("rss/footer");
+}
 
     public function fetch_feed()
     {
@@ -94,7 +95,7 @@ class Rss_controller extends CI_Controller
             return;
         }
 
-        // Use cURL to fetch RSS
+        // Fetch RSS
         $ch = curl_init();
         curl_setopt_array($ch, [
             CURLOPT_URL => $feed_url,
@@ -146,23 +147,13 @@ class Rss_controller extends CI_Controller
             // Check enclosure
             if (empty($image_url) && isset($item->enclosure)) {
                 $attrs = $item->enclosure->attributes();
-                if (
-                    isset($attrs->type) &&
-                    strpos($attrs->type, "image") !== false
-                ) {
+                if (isset($attrs->type) && strpos($attrs->type, "image") !== false) {
                     $image_url = (string) $attrs->url;
                 }
             }
 
             // Extract from description
-            if (
-                empty($image_url) &&
-                preg_match(
-                    '/<img[^>]+src=["\']([^"\']+)["\'][^>]*>/i',
-                    $description,
-                    $matches
-                )
-            ) {
+            if (empty($image_url) && preg_match('/<img[^>]+src=["\']([^"\']+)["\'][^>]*>/i', $description, $matches)) {
                 $image_url = $matches[1];
             }
 
@@ -209,11 +200,20 @@ class Rss_controller extends CI_Controller
         header("Content-Type: application/json");
 
         $post_id = $this->input->post("post_id");
-        $new_priority = $this->input->post("new_priority");
+        $new_priority = intval($this->input->post("new_priority"));
+
+        if (empty($post_id) || $new_priority < 1) {
+            echo json_encode(["success" => false, "message" => "Invalid parameters"]);
+            return;
+        }
 
         $result = $this->Post_model->update_priority($post_id, $new_priority);
 
-        echo json_encode(["success" => $result]);
+        echo json_encode([
+            "success" => $result,
+            "message" => $result ? "Priority updated successfully" : "Failed to update priority",
+            "new_priority" => $new_priority
+        ]);
     }
 
     public function toggle_platform()
@@ -232,7 +232,6 @@ class Rss_controller extends CI_Controller
     {
         header("Content-Type: application/json");
 
-        // Get JSON input
         $json = file_get_contents("php://input");
         $data = json_decode($json, true);
 
@@ -247,17 +246,16 @@ class Rss_controller extends CI_Controller
             return;
         }
 
-        // First, remove all existing platforms for this post
+        // Remove all existing platforms for this post
         $this->db->delete("post_platforms", ["post_id" => $post_id]);
 
-        // Then add the new selections
+        // Add new selections
         $success = true;
         foreach ($platforms as $platform) {
             $result = $this->db->insert("post_platforms", [
                 "post_id" => $post_id,
                 "platform" => $platform,
             ]);
-
             if (!$result) {
                 $success = false;
             }
@@ -265,9 +263,7 @@ class Rss_controller extends CI_Controller
 
         echo json_encode([
             "success" => $success,
-            "message" => $success
-                ? "Platforms updated successfully"
-                : "Failed to update platforms",
+            "message" => $success ? "Platforms updated successfully" : "Failed to update platforms",
             "post_id" => $post_id,
             "platforms" => $platforms,
         ]);
