@@ -118,12 +118,12 @@
                                 </div>
                                 <?php endif; ?>
                                 
-                                <!-- Platform Selection -->
-                                <div class="platform-selection" data-post-id="<?= $post['id'] ?>">
-                                    <div class="row align-items-end">
-                                        <div class="col-md-8">
-                                            <label class="form-label text-muted small mb-1">Select platforms for this post:</label>
-                                            <select class="form-select platform-select" multiple size="3" data-post-id="<?= $post['id'] ?>">
+                                <!-- Platform Badges (Clickable) -->
+                                <div class="mb-3">
+                                    <p class="text-muted mb-1 small">Assigned Platforms:</p>
+                                    <div class="d-flex flex-wrap gap-1 current-platforms" id="current-platforms-<?= $post['id'] ?>">
+                                        <?php if (!empty($post['platforms'])): ?>
+                                            <?php foreach ($post['platforms'] as $platform): ?>
                                                 <?php 
                                                 $platform_icons = [
                                                     'X (Twitter)' => 'bi bi-twitter-x text-dark',
@@ -133,44 +133,26 @@
                                                     'TikTok' => 'bi bi-tiktok text-dark',
                                                     'Threads' => 'bi bi-threads text-purple'
                                                 ];
-                                                foreach ($platforms as $platform): 
-                                                    $icon = isset($platform_icons[$platform]) ? $platform_icons[$platform] : 'bi bi-share';
+                                                $icon = isset($platform_icons[$platform]) ? $platform_icons[$platform] : 'bi bi-share';
                                                 ?>
-                                                    <option value="<?= $platform ?>" 
-                                                            <?= in_array($platform, $post['platforms']) ? 'selected' : '' ?>
-                                                            data-icon="<?= $icon ?>">
-                                                        <?= $platform ?>
-                                                    </option>
-                                                <?php endforeach; ?>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <button type="button" 
-                                                    class="btn btn-primary w-100 save-platforms-btn"
-                                                    data-post-id="<?= $post['id'] ?>">
-                                                <i class="bi bi-save me-1"></i> Save
-                                            </button>
-                                        </div>
+                                                <span class="badge bg-primary d-flex align-items-center">
+                                                    <i class="<?= $icon ?> me-1"></i> <?= $platform ?>
+                                                </span>
+                                            <?php endforeach; ?>
+                                        <?php else: ?>
+                                            <span class="text-muted small">No platforms selected</span>
+                                        <?php endif; ?>
                                     </div>
                                     
-                                    <!-- Current Selection Display -->
-                                    <div class="mt-2">
-                                        <p class="text-muted mb-1 small">Currently assigned:Press Ctrl to Select Multiple and For MAC use CMD</p>
-                                        <div class="d-flex flex-wrap gap-1 current-platforms" id="current-platforms-<?= $post['id'] ?>">
-                                            <?php if (!empty($post['platforms'])): ?>
-                                                <?php foreach ($post['platforms'] as $platform): ?>
-                                                    <?php 
-                                                    $icon = isset($platform_icons[$platform]) ? $platform_icons[$platform] : 'bi bi-share';
-                                                    ?>
-                                                    <span class="badge bg-primary d-flex align-items-center">
-                                                        <i class="<?= $icon ?> me-1"></i> <?= $platform ?>
-                                                    </span>
-                                                <?php endforeach; ?>
-                                            <?php else: ?>
-                                                <span class="text-muted small">No platforms selected</span>
-                                            <?php endif; ?>
-                                        </div>
-                                    </div>
+                                    <!-- Assign Platforms Button -->
+                                    <button type="button" 
+                                            class="btn btn-sm btn-outline-primary mt-2 assign-platforms-btn"
+                                            data-bs-toggle="modal" 
+                                            data-bs-target="#platformModal"
+                                            data-post-id="<?= $post['id'] ?>"
+                                            data-current-platforms='<?= json_encode($post['platforms']) ?>'>
+                                        <i class="bi bi-plus-circle me-1"></i> Assign Platforms
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -211,6 +193,75 @@
         </nav> 
         <?php endif; ?>
     <?php endif; ?>
+</div>
+
+<!-- Platform Assignment Modal -->
+<div class="modal fade" id="platformModal" tabindex="-1" aria-labelledby="platformModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="platformModalLabel">
+                    <i class="bi bi-share me-2"></i> Assign Social Media Platforms
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <p class="text-muted small mb-2">Select platforms for this post:</p>
+                    <div class="platform-checkboxes">
+                        <?php foreach ($platforms as $platform): ?>
+                            <?php 
+                            $platform_icons = [
+                                'X (Twitter)' => 'bi bi-twitter-x',
+                                'Facebook' => 'bi bi-facebook text-primary',
+                                'LinkedIn' => 'bi bi-linkedin text-info',
+                                'Instagram' => 'bi bi-instagram text-danger',
+                                'TikTok' => 'bi bi-tiktok',
+                                'Threads' => 'bi bi-threads text-purple'
+                            ];
+                            $icon = isset($platform_icons[$platform]) ? $platform_icons[$platform] : 'bi bi-share';
+                            ?>
+                            <div class="form-check mb-2 platform-checkbox-item">
+                                <input class="form-check-input platform-checkbox" 
+                                       type="checkbox" 
+                                       value="<?= $platform ?>" 
+                                       id="platform_<?= str_replace([' ', '(', ')'], ['', '', ''], $platform) ?>">
+                                <label class="form-check-label d-flex align-items-center" for="platform_<?= str_replace([' ', '(', ')'], ['', '', ''], $platform) ?>">
+                                    <i class="<?= $icon ?> me-2"></i>
+                                    <span><?= $platform ?></span>
+                                    <?php if ($platform === 'X (Twitter)'): ?>
+                                        <small class="text-muted ms-2">(280 char limit)</small>
+                                    <?php endif; ?>
+                                </label>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+                
+                <div class="selected-platforms-preview mb-3">
+                    <p class="text-muted small mb-2">Selected platforms:</p>
+                    <div class="d-flex flex-wrap gap-2" id="selectedPlatformsPreview">
+                        <span class="text-muted small">None selected</span>
+                    </div>
+                </div>
+                
+                <!-- Twitter Character Warning -->
+                <div class="alert alert-warning d-none" id="twitterWarning">
+                    <i class="bi bi-exclamation-triangle me-2"></i>
+                    <span>This post has <span id="charCount">0</span> characters. 
+                    X (Twitter) has a 280 character limit.</span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                    <i class="bi bi-x-circle me-1"></i> Cancel
+                </button>
+                <button type="button" class="btn btn-primary" id="savePlatformsModal">
+                    <i class="bi bi-save me-1"></i> Save Platforms
+                </button>
+            </div>
+        </div>
+    </div>
 </div>
 
 <style>
@@ -282,47 +333,6 @@
         animation: fadeInOut 1.5s ease;
     }
     
-    .platform-select {
-        height: auto;
-        min-height: 100px;
-        border-radius: 8px;
-        border: 1px solid #dee2e6;
-        padding: 8px;
-    }
-    
-    .platform-select option {
-        padding: 8px 12px;
-        border-radius: 4px;
-        margin-bottom: 2px;
-        cursor: pointer;
-        transition: all 0.2s ease;
-    }
-    
-    .platform-select option:hover {
-        background-color: #f8f9fa;
-    }
-    
-    .platform-select option:checked {
-        background-color: #0d6efd;
-        color: white;
-    }
-    
-    .save-platforms-btn:disabled {
-        opacity: 0.6;
-        cursor: not-allowed;
-    }
-    
-    .save-platforms-btn .spinner-border {
-        width: 1rem;
-        height: 1rem;
-        border-width: 0.15em;
-    }
-    
-    .save-feedback {
-        font-size: 0.75rem;
-        animation: fadeInOut 2s ease;
-    }
-    
     @keyframes fadeInOut {
         0% { opacity: 0; transform: scale(0.8); }
         20% { opacity: 1; transform: scale(1); }
@@ -330,10 +340,90 @@
         100% { opacity: 0; transform: scale(0.8); }
     }
     
-    .select-hint {
-        font-size: 0.75rem;
-        color: #6c757d;
-        margin-top: 4px;
+    /* Platform Modal Styles */
+    .platform-checkbox-item {
+        padding: 8px 12px;
+        border-radius: 8px;
+        transition: all 0.2s ease;
+        border: 1px solid transparent;
+    }
+    
+    .platform-checkbox-item:hover {
+        background-color: rgba(0, 123, 255, 0.05);
+        border-color: rgba(0, 123, 255, 0.2);
+    }
+    
+    .platform-checkbox-item .form-check-input:checked ~ .form-check-label {
+        font-weight: 600;
+        color: #0d6efd;
+    }
+    
+    .platform-checkbox-item .form-check-input:checked {
+        background-color: #0d6efd;
+        border-color: #0d6efd;
+    }
+    
+    .form-check-input:focus {
+        box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    }
+    
+    /* Selected platforms preview */
+    #selectedPlatformsPreview .badge {
+        padding: 6px 10px;
+        font-size: 0.875rem;
+    }
+    
+    /* Modal animations */
+    .modal.fade .modal-dialog {
+        transform: translate(0, -50px);
+        transition: transform 0.3s ease-out;
+    }
+    
+    .modal.show .modal-dialog {
+        transform: none;
+    }
+    
+    /* Platform icons */
+    .bi-twitter-x { color: #000000; }
+    .bi-facebook { color: #1877F2; }
+    .bi-linkedin { color: #0A66C2; }
+    .bi-instagram { color: #E4405F; }
+    .bi-tiktok { color: #000000; }
+    .bi-threads { color: #000000; }
+    
+    /* Toast Notifications */
+    .toast-container {
+        z-index: 9999;
+    }
+    
+    .toast {
+        backdrop-filter: blur(10px);
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .toast-body {
+        padding: 12px 16px;
+        font-weight: 500;
+    }
+    
+    /* Modal z-index fix */
+    .modal-backdrop {
+        z-index: 1055;
+    }
+    
+    .modal {
+        z-index: 1060;
+    }
+    
+    /* Assign button */
+    .assign-platforms-btn {
+        transition: all 0.2s ease;
+    }
+    
+    .assign-platforms-btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);
     }
 </style>
 
@@ -477,7 +567,7 @@ function handleDrop(e) {
         updateVisualPriorities();
         
         // Send update to server with GLOBAL priority
-        updatePriorityOnServer(draggedItem.dataset.id, newGlobalPriority, draggedItem.dataset.originalPriority);
+        updatePriorityOnServer(draggedItem.dataset.id, newGlobalPriority);
     }
 }
 
@@ -498,7 +588,7 @@ function updateVisualPriorities() {
 }
 
 // Update priority on server
-function updatePriorityOnServer(postId, newGlobalPriority, oldGlobalPriority) {
+function updatePriorityOnServer(postId, newGlobalPriority) {
     // Show loading
     const dragHandle = draggedItem.querySelector('.drag-handle');
     const originalHandleContent = dragHandle.innerHTML;
@@ -572,57 +662,119 @@ function revertPosition() {
     }
 }
 
-// Platform Selection Functions
-function initializePlatformSelection() {
-    document.querySelectorAll('.platform-select').forEach(select => {
-        select.addEventListener('change', function() {
-            updateCurrentPlatformsDisplay(this);
-        });
-    });
+// Platform Modal Functions
+function initializePlatformModal() {
+    const modal = document.getElementById('platformModal');
+    let currentPostId = null;
+    let currentCharCount = 0;
     
-    document.addEventListener('click', function(e) {
-        if (e.target.closest('.save-platforms-btn')) {
-            const button = e.target.closest('.save-platforms-btn');
-            savePlatforms(button);
+    // When modal is about to be shown
+    modal.addEventListener('show.bs.modal', function(event) {
+        const button = event.relatedTarget;
+        currentPostId = button.getAttribute('data-post-id');
+        const currentPlatforms = JSON.parse(button.getAttribute('data-current-platforms') || '[]');
+        
+        // Update modal title with post ID
+        document.getElementById('platformModalLabel').innerHTML = 
+            `<i class="bi bi-share me-2"></i> Assign Platforms `;
+        
+        // Reset all checkboxes
+        document.querySelectorAll('.platform-checkbox').forEach(checkbox => {
+            checkbox.checked = false;
+        });
+        
+        // Check the platforms this post already has
+        currentPlatforms.forEach(platform => {
+            const checkbox = document.querySelector(`.platform-checkbox[value="${platform}"]`);
+            if (checkbox) {
+                checkbox.checked = true;
+            }
+        });
+        
+        // Update preview
+        updateSelectedPlatformsPreview();
+        
+        // Get character count for Twitter warning
+        const postCard = document.querySelector(`.post-item[data-id="${currentPostId}"]`);
+        const charBadge = postCard.querySelector('.badge.bg-info');
+        if (charBadge) {
+            currentCharCount = parseInt(charBadge.textContent.match(/\d+/)[0]) || 0;
+        }
+        
+        // Show/hide Twitter warning
+        const twitterWarning = document.getElementById('twitterWarning');
+        const twitterCheckbox = document.querySelector('.platform-checkbox[value="X (Twitter)"]');
+        
+        if (twitterCheckbox && currentCharCount > 280) {
+            document.getElementById('charCount').textContent = currentCharCount;
+            twitterWarning.classList.remove('d-none');
+        } else {
+            twitterWarning.classList.add('d-none');
         }
     });
-}
-
-function updateCurrentPlatformsDisplay(selectElement) {
-    const postId = selectElement.dataset.postId;
-    const selectedOptions = Array.from(selectElement.selectedOptions);
-    const currentPlatformsDiv = document.getElementById(`current-platforms-${postId}`);
     
-    currentPlatformsDiv.innerHTML = '';
-    
-    if (selectedOptions.length === 0) {
-        currentPlatformsDiv.innerHTML = '<span class="text-muted small">No platforms selected</span>';
-        return;
-    }
-    
-    selectedOptions.forEach(option => {
-        const platform = option.value;
-        const icon = option.dataset.icon || 'bi bi-share';
-        
-        const badge = document.createElement('span');
-        badge.className = 'badge bg-primary d-flex align-items-center me-1 mb-1';
-        badge.innerHTML = `<i class="${icon} me-1"></i> ${platform}`;
-        
-        currentPlatformsDiv.appendChild(badge);
+    // When checkboxes change
+    document.querySelectorAll('.platform-checkbox').forEach(checkbox => {
+        checkbox.addEventListener('change', updateSelectedPlatformsPreview);
     });
+    
+    // Save button click
+    document.getElementById('savePlatformsModal').addEventListener('click', function() {
+        if (!currentPostId) return;
+        
+        // Get selected platforms
+        const selectedPlatforms = [];
+        document.querySelectorAll('.platform-checkbox:checked').forEach(checkbox => {
+            selectedPlatforms.push(checkbox.value);
+        });
+        
+        // Show loading on save button
+        const saveBtn = this;
+        const originalText = saveBtn.innerHTML;
+        saveBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span> Saving...';
+        saveBtn.disabled = true;
+        
+        // Save platforms
+        savePlatformsToServer(currentPostId, selectedPlatforms, saveBtn, originalText);
+    });
+    
+    // Update preview function
+    function updateSelectedPlatformsPreview() {
+        const previewDiv = document.getElementById('selectedPlatformsPreview');
+        const selectedPlatforms = [];
+        
+        document.querySelectorAll('.platform-checkbox:checked').forEach(checkbox => {
+            selectedPlatforms.push(checkbox.value);
+        });
+        
+        previewDiv.innerHTML = '';
+        
+        if (selectedPlatforms.length === 0) {
+            previewDiv.innerHTML = '<span class="text-muted small">None selected</span>';
+            return;
+        }
+        
+        selectedPlatforms.forEach(platform => {
+            const platform_icons = {
+                'X (Twitter)': 'bi bi-twitter-x text-dark',
+                'Facebook': 'bi bi-facebook text-primary',
+                'LinkedIn': 'bi bi-linkedin text-info',
+                'Instagram': 'bi bi-instagram text-danger',
+                'TikTok': 'bi bi-tiktok text-dark',
+                'Threads': 'bi bi-threads text-purple'
+            };
+            
+            const icon = platform_icons[platform] || 'bi bi-share';
+            const badge = document.createElement('span');
+            badge.className = 'badge bg-primary d-flex align-items-center';
+            badge.innerHTML = `<i class="${icon} me-1"></i> ${platform}`;
+            previewDiv.appendChild(badge);
+        });
+    }
 }
 
-function savePlatforms(button) {
-    const postId = button.dataset.postId;
-    const selectElement = document.querySelector(`.platform-select[data-post-id="${postId}"]`);
-    const selectedOptions = Array.from(selectElement.selectedOptions);
-    const selectedPlatforms = selectedOptions.map(option => option.value);
-    
-    // Disable button and show loading
-    button.disabled = true;
-    const originalText = button.innerHTML;
-    button.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span> Saving...';
-    
+// Save platforms from modal
+function savePlatformsToServer(postId, platforms, saveButton, originalButtonText) {
     fetch('<?= base_url('rss/update_platforms') ?>', {
         method: 'POST',
         headers: {
@@ -631,52 +783,118 @@ function savePlatforms(button) {
         },
         body: JSON.stringify({
             post_id: postId,
-            platforms: selectedPlatforms
+            platforms: platforms
         })
     })
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            showPlatformSaveFeedback(button, 'success', 'Saved!');
+            // Update the UI
+            updatePostPlatformsUI(postId, platforms);
+            
+            // Show success message
+            showToast('success', 'Platforms updated successfully!');
+            
+            // Close modal after delay
+            setTimeout(() => {
+                const modal = bootstrap.Modal.getInstance(document.getElementById('platformModal'));
+                modal.hide();
+            }, 1000);
         } else {
-            showPlatformSaveFeedback(button, 'error', 'Failed!');
+            showToast('error', 'Failed to update platforms');
         }
     })
     .catch(error => {
         console.error('Error:', error);
-        showPlatformSaveFeedback(button, 'error', 'Error!');
+        showToast('error', 'Error saving platforms');
     })
     .finally(() => {
+        // Restore button
         setTimeout(() => {
-            button.disabled = false;
-            button.innerHTML = originalText;
-        }, 2000);
+            saveButton.innerHTML = originalButtonText;
+            saveButton.disabled = false;
+        }, 500);
     });
 }
 
-function showPlatformSaveFeedback(button, type, message) {
-    const existingFeedback = button.parentNode.querySelector('.save-feedback');
-    if (existingFeedback) {
-        existingFeedback.remove();
+// Update post UI after saving
+function updatePostPlatformsUI(postId, platforms) {
+    const currentPlatformsDiv = document.getElementById(`current-platforms-${postId}`);
+    const assignButton = document.querySelector(`.assign-platforms-btn[data-post-id="${postId}"]`);
+    
+    // Update badges
+    currentPlatformsDiv.innerHTML = '';
+    
+    if (platforms.length === 0) {
+        currentPlatformsDiv.innerHTML = '<span class="text-muted small">No platforms selected</span>';
+    } else {
+        const platform_icons = {
+            'X (Twitter)': 'bi bi-twitter-x text-dark',
+            'Facebook': 'bi bi-facebook text-primary',
+            'LinkedIn': 'bi bi-linkedin text-info',
+            'Instagram': 'bi bi-instagram text-danger',
+            'TikTok': 'bi bi-tiktok text-dark',
+            'Threads': 'bi bi-threads text-purple'
+        };
+        
+        platforms.forEach(platform => {
+            const icon = platform_icons[platform] || 'bi bi-share';
+            const badge = document.createElement('span');
+            badge.className = 'badge bg-primary d-flex align-items-center me-1 mb-1';
+            badge.innerHTML = `<i class="${icon} me-1"></i> ${platform}`;
+            currentPlatformsDiv.appendChild(badge);
+        });
     }
     
-    const feedback = document.createElement('div');
-    feedback.className = `save-feedback position-absolute mt-1 small text-${type === 'success' ? 'success' : 'danger'}`;
-    feedback.innerHTML = `<i class="bi bi-${type === 'success' ? 'check' : 'x'}-circle me-1"></i> ${message}`;
+    // Update button data attribute
+    if (assignButton) {
+        assignButton.setAttribute('data-current-platforms', JSON.stringify(platforms));
+    }
+}
+
+// Toast notification function
+function showToast(type, message) {
+    // Remove existing toasts
+    const existingToasts = document.querySelectorAll('.toast');
+    existingToasts.forEach(toast => toast.remove());
     
-    button.parentNode.style.position = 'relative';
-    button.parentNode.appendChild(feedback);
+    // Create toast
+    const toastHtml = `
+        <div class="toast align-items-center text-bg-${type === 'success' ? 'success' : 'danger'} border-0" 
+             role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    <i class="bi ${type === 'success' ? 'bi-check-circle' : 'bi-exclamation-circle'} me-2"></i>
+                    ${message}
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+            </div>
+        </div>
+    `;
     
-    setTimeout(() => {
-        if (feedback.parentNode) {
-            feedback.remove();
-        }
-    }, 3000);
+    // Add to page
+    const toastContainer = document.createElement('div');
+    toastContainer.className = 'toast-container position-fixed top-0 end-0 p-3';
+    toastContainer.innerHTML = toastHtml;
+    document.body.appendChild(toastContainer);
+    
+    // Show toast
+    const toastElement = toastContainer.querySelector('.toast');
+    const toast = new bootstrap.Toast(toastElement, {
+        autohide: true,
+        delay: 3000
+    });
+    toast.show();
+    
+    // Remove after hiding
+    toastElement.addEventListener('hidden.bs.toast', function() {
+        toastContainer.remove();
+    });
 }
 
 // Initialize everything
 document.addEventListener('DOMContentLoaded', function() {
     initializeDragAndDrop();
-    initializePlatformSelection();
+    initializePlatformModal();
 });
 </script>

@@ -308,7 +308,7 @@
 														$is_selected_platform = ($platform_filter !== 'all' && $platform === $platform_filter);
 														
 														// Default style
-														$badge_class = 'bg-secondary bg-opacity-25 text-dark border';
+														$badge_class = 'bg-primary bg-opacity-25 text-dark border';
 														
 														// Highlight filtered platform
 														if ($is_selected_platform) {
@@ -344,23 +344,7 @@
 																<!-- Post Status -->
 										<div class="d-flex justify-content-between align-items-center pt-3 border-top">
 											<div class="text-muted small">
-												<?php 
-												$platform_count = count($post['platforms']);
-												$platform_text = $platform_count === 1 ? 'platform' : 'platforms';
 												
-												if ($platform_filter === 'all') {
-													echo '<i class="bi bi-grid-3x3-gap me-1"></i>';
-													echo "Assigned to <strong>{$platform_count}</strong> {$platform_text}";
-												} else {
-													$has_selected_platform = in_array($platform_filter, $post['platforms']);
-													echo '<i class="bi bi-filter-circle text-primary me-1"></i>';
-													echo "Filtered by <strong>{$platform_filter}</strong>";
-													
-													if ($has_selected_platform && $platform_count > 1) {
-														echo " (also on " . ($platform_count - 1) . " other platform" . ($platform_count > 2 ? 's' : '') . ")";
-													}
-												}
-												?>
 											</div>
 											
 											<div class="d-flex align-items-center gap-2">
